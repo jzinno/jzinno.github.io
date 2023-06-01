@@ -1,0 +1,31 @@
+{
+  "name": "jzinno.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "next build && next export && touch out/.nojekyll && npx gh-pages -d out",
+    "predeploy": "rm -rf out"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://jzinno.github.io/",
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "next": "^13.4.4",
+    "postcss": "^8.4.24",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.7",
+    "gh-pages": "^5.0.0",
+    "typescript": "^5.0.4"
+  }
+}
