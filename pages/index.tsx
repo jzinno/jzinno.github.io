@@ -1,6 +1,9 @@
 import Head from "next/head";
+import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import WaveComponent from "../components/WaveComponent";
+import ParticleBackground from "../components/ParticleBackground";
 
 const Home: React.FC = () => {
   return (
@@ -8,21 +11,37 @@ const Home: React.FC = () => {
       <Head>
         <title>John Zinno</title>
       </Head>
-
       <Header />
-      <main className="flex justify-center items-center h-64 bg-gray-100 w-full">
-        <div className="flex justify-center items-center h-32 max-w-4xl bg-slate-800 rounded-lg drop-shadow-lg">
+      <main className="flex py-8 justify-center items-center h-auto bg-gray-100 w-full">
+        <div className="flex py-8 justify-center items-center h-auto max-w-4xl bg-slate-800 rounded-xl drop-shadow-lg opacity-90">
+          <ParticleBackground />
           <div>
-            <h1 className="text-3xl text-slate-400 text-center select-none">
-              Welcome to My Website
+            <div className="flex justify-center items-top">
+              <Image
+                src="/angelslanding.png" // Path to your image
+                alt="Description of image"
+                width={200}
+                height={200}
+                className="rounded-xl z-10"
+              />
+            </div>
+            <h1 className="text-3xl text-slate-300 text-center select-none z-10">
+              John Zinno
             </h1>
-            <p className="text-xl text-slate-400 text-center select-none px-4">
-              Here you can find my qualifications, experience, projects, and
-              interests.
+            <p className="text-lg text-slate-300 text-center select-none px-4 z-10">
+              As a Genomics Data Scientist, I am very interested in the power of
+              deep learning and its potential in genomics and bioinformatics. My
+              recent work particularly emphasizes using neural networks and
+              generative models to decode complex genetic signatures, augmenting
+              single-cell 'omics' annotation and revolutionizing our
+              understanding of cellular diversity.
             </p>
           </div>
         </div>
       </main>
+      <div className="text-center fixed bottom-0 left-0 w-full">
+        <WaveComponent startColor="#ff5e62" endColor="#ff9966" />
+      </div>
       <Footer />
     </div>
   );
