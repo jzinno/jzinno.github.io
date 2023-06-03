@@ -20,9 +20,9 @@ const Home: React.FC = () => {
               <Image
                 src="/angelslanding.png" // Path to your image
                 alt="Description of image"
-                width={200}
-                height={200}
-                className="rounded-xl z-10"
+                width={250}
+                height={250}
+                className="rounded-xl z-10 select-none"
               />
             </div>
             <h1 className="text-3xl text-slate-300 text-center select-none z-10">
