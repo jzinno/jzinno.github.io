@@ -18,7 +18,7 @@ const Home: React.FC = () => {
           <div>
             <div className="flex justify-center items-top">
               <Image
-                src="/angelslanding.png" // Path to your image
+                src="/angelslanding.png"
                 alt="Description of image"
                 width={250}
                 height={250}
