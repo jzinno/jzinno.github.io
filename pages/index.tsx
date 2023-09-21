@@ -39,6 +39,21 @@ const Home: React.FC = () => {
           </div>
         </div>
       </main>
+      <div className="flex justify-center items-center h-full w-full">
+        <div className="grid justify-center grid-cols-4 gap-12 p-10 w-50">
+          {/* Sample grid of images */}
+          <Image src="/wcm.png" alt="wcm" width={260} height={250} />
+          <Image src="/nygc.png" alt="nygc" width={250} height={250} />
+          <Image src="/nyulh.png" alt="nyulh" width={250} height={250} />
+          <Image src="/nyu.png" alt="nyu" width={250} height={250} />
+          <Image src="/landau.png" alt="landau" width={200} height={250} />
+          <Image src="/smaht.png" alt="smaht" width={250} height={250} />
+          <Image src="/cegs.png" alt="cegs" width={250} height={250} />
+          <Image src="/thetree.png" alt="thetree" width={250} height={250} />
+          {/* Add more <Image> components as needed */}
+        </div>
+      </div>
+
       <div className="text-center fixed bottom-0 left-0 w-full">
         <WaveComponent startColor="#ff5e62" endColor="#ff9966" />
       </div>
