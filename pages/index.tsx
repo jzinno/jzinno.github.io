@@ -49,7 +49,7 @@ const Home: React.FC = () => {
           <Image src="/landau.png" alt="landau" width={200} height={250} />
           <Image src="/smaht.png" alt="smaht" width={250} height={250} />
           <Image src="/cegs.png" alt="cegs" width={250} height={250} />
-          <Image src="/thetree.png" alt="thetree" width={250} height={250} />
+          <Image src="/thetree-2.png" alt="thetree" width={250} height={250} />
           {/* Add more <Image> components as needed */}
         </div>
       </div>
