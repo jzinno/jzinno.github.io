@@ -10,17 +10,17 @@ const Header: React.FC = () => {
         <Link href="/aboutme" className="text-white text-xl font-bold">
           About Me
         </Link>
-        <Link href="/edu" className="text-white text-xl font-bold">
-          Education
-        </Link>
         <Link href="/experience" className="text-white text-xl font-bold">
           Experience
         </Link>
-        <Link href="/gallery" className="text-white text-xl font-bold">
-          Gallery
+        <Link href="/edu" className="text-white text-xl font-bold">
+          Education
         </Link>
         <Link href="/pubs" className="text-white text-xl font-bold">
           Publications
+        </Link>
+        <Link href="/gallery" className="text-white text-xl font-bold">
+          Gallery
         </Link>
       </nav>
     </header>
