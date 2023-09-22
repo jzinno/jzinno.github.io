@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/ThreeSlotFooter";
 import WaveComponent from "../components/WaveComponent";
 
 const Experience: React.FC = () => {
@@ -64,10 +64,13 @@ const Experience: React.FC = () => {
         <title>Experience - John Zinno</title>
       </Head>
       <Header />
-      <main className="p-4 text-center">
+      <main className="flex flex-col justify-center items-center p-4 text-center">
         <h1 className="text-2xl font-bold mb-4">Work Experience</h1>
         {experiences.map((exp, index) => (
-          <div key={index} className="mb-4">
+          <div
+            key={index}
+            className="mb-4 p-4 border rounded-lg shadow-lg bg-white w-2/3 hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          >
             <h2 className="text-xl font-bold">{exp.role}</h2>
             <h3 className="text-lg">{exp.company}</h3>
             <h4 className="text-gray-500">{exp.duration}</h4>
