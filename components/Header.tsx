@@ -10,13 +10,13 @@ const links = [
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-slate-800 py-4 shadow-lg opacity-90">
-      <nav className="max-w-max mx-auto flex justify-between items-center divide-dotted divide-x-2 ">
+    <header className="bg-slate-900 py-4 shadow-lg opacity-90">
+      <nav className="max-w-max mx-auto flex justify-between items-center ">
         {links.map((link, index) => (
           <Link
             key={index}
             href={link.href}
-            className="px-4 hover:px-6 text-white text-xl font-bold hover:text-gray-300 hover:scale-105 cursor-pointer select-none transition-all duration-200 ease-in-out"
+            className="px-4 text-white text-xl font-bold hover:text-gray-300 hover:scale-105 cursor-pointer select-none transition-all duration-200 ease-in-out"
           >
             {link.text}
           </Link>
