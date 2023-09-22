@@ -30,7 +30,7 @@ const ParticleBackground = () => {
         interactivity: {
           events: {
             onClick: {
-              enable: false,
+              enable: true,
               mode: "push",
             },
             onHover: {
@@ -78,10 +78,10 @@ const ParticleBackground = () => {
               enable: true,
               area: 800,
             },
-            value: 66,
+            value: 75,
           },
           opacity: {
-            value: 0.33,
+            value: 0.5,
           },
           shape: {
             type: "circle",
