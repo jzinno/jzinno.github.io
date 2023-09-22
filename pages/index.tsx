@@ -1,10 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/ThreeSlotFooter";
 import WaveComponent from "../components/WaveComponent";
 import ParticleBackground from "../components/ParticleBackground";
 
+const images = [
+  { src: "/wcm.png", alt: "wcm" },
+  { src: "/nygc.png", alt: "nygc" },
+  { src: "/nyulh.png", alt: "nyulh" },
+  { src: "/nyu.png", alt: "nyu" },
+  { src: "/landau.png", alt: "landau" },
+  { src: "/smaht.png", alt: "smaht" },
+  { src: "/cegs.png", alt: "cegs" },
+  { src: "/thetree-2.png", alt: "thetree" },
+  // add more images as needed
+];
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
@@ -13,7 +24,7 @@ const Home: React.FC = () => {
       </Head>
       <Header />
       <main className="flex py-8 justify-center items-center h-auto bg-gray-100 w-full">
-        <div className="flex py-8 justify-center items-center h-auto max-w-4xl bg-slate-800 rounded-xl drop-shadow-lg opacity-90">
+        <div className="flex py-8 justify-center items-center h-auto max-w-4xl bg-slate-800 rounded-xl drop-shadow-2xl opacity-90">
           <ParticleBackground />
           <div>
             <div className="flex justify-center items-top">
@@ -25,10 +36,10 @@ const Home: React.FC = () => {
                 className="rounded-xl z-10 select-none"
               />
             </div>
-            <h1 className="text-3xl text-slate-300 text-center select-none z-10">
+            <h1 className="text-3xl tracking-wide subpixel-antialiased text-slate-300 text-center select-none z-10">
               John Zinno
             </h1>
-            <p className="text-lg text-slate-300 text-center select-none px-4 z-10">
+            <p className="text-lg subpixel-antialiased text-slate-300 text-center select-none px-4 z-10">
               As a Genomics Data Scientist, I am very interested in the power of
               deep learning and its potential in genomics and bioinformatics. My
               recent work particularly emphasizes using neural networks and
@@ -39,21 +50,21 @@ const Home: React.FC = () => {
           </div>
         </div>
       </main>
+
       <div className="flex justify-center items-center h-full w-full">
-        <div className="grid justify-center grid-cols-4 gap-12 p-10 w-50">
-          {/* Sample grid of images */}
-          <Image src="/wcm.png" alt="wcm" width={260} height={250} />
-          <Image src="/nygc.png" alt="nygc" width={250} height={250} />
-          <Image src="/nyulh.png" alt="nyulh" width={250} height={250} />
-          <Image src="/nyu.png" alt="nyu" width={250} height={250} />
-          <Image src="/landau.png" alt="landau" width={200} height={250} />
-          <Image src="/smaht.png" alt="smaht" width={250} height={250} />
-          <Image src="/cegs.png" alt="cegs" width={250} height={250} />
-          <Image src="/thetree-2.png" alt="thetree" width={250} height={250} />
-          {/* Add more <Image> components as needed */}
+        <div className="grid grid-cols-4 gap-2 p-2 w-full justify-items-center place-items-center">
+          {images.map((image, index) => (
+            <Image
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              width={250}
+              height={250}
+              className="object-cover"
+            />
+          ))}
         </div>
       </div>
-
       <div className="text-center fixed bottom-0 left-0 w-full">
         <WaveComponent startColor="#ff5e62" endColor="#ff9966" />
       </div>
