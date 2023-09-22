@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/ThreeSlotFooter";
 import WaveComponent from "../components/WaveComponent";
 
 const Pubs: React.FC = () => {
