@@ -20,7 +20,7 @@ const SvgWave: FC<SvgWaveProps> = ({
       viewBox="0 0 500 150"
       preserveAspectRatio="none"
       style={{
-        height: "40%",
+        height: "50%",
         width: "100%",
         position: "absolute",
         bottom: 0,
