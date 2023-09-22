@@ -53,7 +53,7 @@ const Home: React.FC = () => {
       </main>
 
       <div className="flex justify-center items-center h-full w-full">
-        <div className="grid grid-cols-4 gap-2 p-2 w-full justify-items-center place-items-center">
+        <div className="grid grid-cols-4 gap-2 p-2 max-w-screen-xl justify-items-center place-items-center">
           {images.map((image, index) => (
             <Image
               key={index}
