@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/ThreeSlotFooter";
 import WaveComponent from "../components/WaveComponent";
 import ParticleBackground from "../components/ParticleBackground";
+import Sidebar from "../components/Sidebar";
 
 const images = [
   { src: "/wcm.png", alt: "wcm" },
@@ -22,9 +23,9 @@ const Home: React.FC = () => {
       <Head>
         <title>John Zinno</title>
       </Head>
-      <Header />
+      <Sidebar/>
       <main className="flex py-8 justify-center items-center h-auto bg-gray-100 w-full">
-        <div className="flex py-8 justify-center items-center h-auto max-w-4xl bg-slate-800 rounded-xl drop-shadow-2xl opacity-90">
+        <div className="flex py-8 justify-center items-center h-auto max-w-4xl bg-slate-900 rounded-xl drop-shadow-2xl opacity-90">
           <ParticleBackground />
           <div>
             <div className="flex justify-center items-top">
