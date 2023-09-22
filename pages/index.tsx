@@ -23,7 +23,6 @@ const Home: React.FC = () => {
       <Head>
         <title>John Zinno</title>
       </Head>
-      <Sidebar/>
       <main className="flex py-8 justify-center items-center h-auto bg-gray-100 w-full">
         <div className="flex py-8 justify-center items-center h-auto max-w-4xl bg-slate-900 rounded-xl drop-shadow-2xl opacity-90">
           <ParticleBackground />
@@ -51,9 +50,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </main>
-
+      <Sidebar/>
       <div className="flex justify-center items-center h-full w-full">
-        <div className="grid grid-cols-4 gap-2 p-2 max-w-screen-xl justify-items-center place-items-center">
+        <div className="grid grid-cols-4 gap-14 p-10 justify-items-center place-items-center">
           {images.map((image, index) => (
             <Image
               key={index}
