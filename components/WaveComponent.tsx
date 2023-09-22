@@ -20,7 +20,7 @@ const SvgWave: FC<SvgWaveProps> = ({
       viewBox="0 0 500 150"
       preserveAspectRatio="none"
       style={{
-        height: "70%",
+        height: "40%",
         width: "100%",
         position: "absolute",
         bottom: 0,
@@ -71,7 +71,7 @@ const WaveComponent: FC<WaveComponentProps> = ({
           key={i}
           opacity={(i + 1) / wavePaths.length}
           path={wavePaths[i]}
-          delay={i * 0.075}
+          delay={i * 0.095}
           startColor={startColor}
           endColor={endColor}
         />
