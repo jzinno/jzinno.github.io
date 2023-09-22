@@ -30,7 +30,7 @@ const Sidebar: React.FC = () => {
                 <FiMenu />
             </button>
             <div
-                className={`fixed top-0 left-0 w-64 h-full bg-white/30 backdrop-blur-md shadow-lg transition-all duration-300 transform   ${
+                className={`fixed top-0 left-0 w-1/4 h-full bg-white/30 backdrop-blur-md shadow-lg transition-all duration-300 transform   ${
                     isOpen ? 'translate-x-0' : '-translate-x-full'
                 }`}
             >
