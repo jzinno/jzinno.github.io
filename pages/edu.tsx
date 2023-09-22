@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/ThreeSlotFooter";
 import WaveComponent from "../components/WaveComponent";
 
 const Education: React.FC = () => {
@@ -8,31 +8,31 @@ const Education: React.FC = () => {
     {
       role: "M.S. Bioinformatics",
       company: "New York University,",
-      duration: "Aug 2020 – May 2022",
+      duration: "Aug 2020 - May 2022",
       responsibilities: [],
     },
     {
       role: "M.S. Biochemistry & Cell Biology",
       company: "Stony Brook University,",
-      duration: "Aug 2016 – Dec 2017",
+      duration: "Aug 2016 - Dec 2017",
       responsibilities: [],
     },
     {
       role: "B.S. Biology",
       company: "Florida Southern College,",
-      duration: "Aug 2012 – May 2016",
+      duration: "Aug 2012 - May 2016",
       responsibilities: [],
     },
     {
       role: "B.S. Chemistry",
       company: "Florida Southern College,",
-      duration: "Aug 2012 – May 2016",
+      duration: "Aug 2012 - May 2016",
       responsibilities: [],
     },
     {
       role: "Minor in Physics",
       company: "Florida Southern College,",
-      duration: "Aug 2012 – May 2016",
+      duration: "Aug 2012 - May 2016",
       responsibilities: ["Concentration in Quantum and Statistical Mechanics"],
     },
     // Add more degrees as needed
@@ -44,14 +44,17 @@ const Education: React.FC = () => {
         <title>Education - John Zinno</title>
       </Head>
       <Header />
-      <main className="p-4 text-center">
-        <h1 className="text-2xl font-bold mb-4">Education</h1>
+      <main className="flex flex-col justify-center items-center p-4 text-center">
+        <h1 className="text-2xl font-bold mb-4 w-1/2">Education</h1>
         {degrees.map((exp, index) => (
-          <div key={index} className="mb-4">
+          <div
+            key={index}
+            className="mb-4 p-4 border rounded-lg shadow-lg bg-white w-2/3 hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          >
             <h2 className="text-xl font-bold">{exp.role}</h2>
             <h3 className="text-lg">{exp.company}</h3>
             <h4 className="text-gray-500">{exp.duration}</h4>
-            <ul className="list-disc">
+            <ul className="">
               {exp.responsibilities.map((resp, i) => (
                 <li key={i}>{resp}</li>
               ))}
