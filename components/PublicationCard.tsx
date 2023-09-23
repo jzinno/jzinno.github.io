@@ -29,7 +29,7 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
   return (
     <>
       <div
-        className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+        className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer  hover:scale-105 transition-all duration-200 ease-in-out"
         onClick={handleCardClick}
       >
         <div className="p-4 overflow-y-auto">
