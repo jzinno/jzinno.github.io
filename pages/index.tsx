@@ -18,15 +18,15 @@ const images = [
 ];
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-gray-100 ">
       <Head>
         <title>John Zinno</title>
       </Head>
       <main className="flex pt-14 justify-center items-center h-auto bg-gray-100 w-full">
         <div className="shadow-xl rounded-xl bg-gray-100 m-2">
-          <div className="flex py-8 justify-center items-center h-auto max-w-3xl bg-slate-900 rounded-xl drop-shadow-xl opacity-90">
+          <div className="flex py-8 justify-center items-center h-auto max-w-4xl bg-slate-900 rounded-xl drop-shadow-xl opacity-90">
             <ParticleBackground />
-            <div>
+            <div className="">
               <div className="flex justify-center items-top">
                 <Image
                   src="/angelslanding.png"
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
                   className="rounded-xl z-10 select-none"
                 />
               </div>
-              <h1 className="text-3xl tracking-wide subpixel-antialiased text-slate-300 text-center select-none z-10">
+              <h1 className="text-4xl tracking-wide subpixel-antialiased text-slate-300 text-center select-none py-2 z-10">
                 John Zinno
               </h1>
               <p className="text-lg subpixel-antialiased text-slate-300 text-center select-none px-4 z-10">
