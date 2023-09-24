@@ -32,7 +32,7 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
         className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer  hover:scale-105 transition-all duration-200 ease-in-out"
         onClick={handleCardClick}
       >
-        <div className="p-4 overflow-y-auto">
+        <div className="p-2 overflow-y-auto">
           <div className="flex flex-col md:flex-row md:items-center">
             <div className="md:w-1/3 md:mr-4 mb-2">
               <Image
@@ -44,7 +44,7 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
               />
             </div>
             <div className="flex-1">
-              <h2 className="text-lg text-slate-800 font-bold mb-2">
+              <h2 className="text-md text-slate-800 font-bold mb-2">
                 {publication.title}
               </h2>
               <p className="text-slate-800 mb-2 italic font-semibold">
@@ -95,7 +95,9 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
                       <FiX className=" hover:scale-110 transition-all duration-200 ease-in-out" />
                     </button>
                   </div>
-                  <h2 className="text-m font-bold my-2">{publication.title}</h2>
+                  <h2 className="text-md font-bold my-2">
+                    {publication.title}
+                  </h2>
                   <p className="text-gray-700 mb-2 italic font-semibold">
                     {publication.journal}
                   </p>
