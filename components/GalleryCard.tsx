@@ -45,13 +45,13 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
           </div>
         </div>
         <div className="p-4">
-          <h2 className="text-lg text-slate-800 font-bold mb-2">{title}</h2>
+          <h2 className="text-md text-slate-800 font-bold mb-2">{title}</h2>
         </div>
       </div>
       {isModalOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm flex justify-center items-center z-50">
           <div className="bg-white rounded-lg shadow-md overflow-hidden w-11/12 relative">
-            <div className="p-4 overflow-y-auto">
+            <div className="p-4 overflow-y-auto bg-white">
               <div className="flex flex-col md:flex-row md:items-center">
                 <div className="md:w-3/5 md:mr-4 mb-2">
                   <div className="m-2">
@@ -59,8 +59,8 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
                       src={featureImage}
                       alt={title}
                       className="w-full h-full object-contain"
-                      width={600}
-                      height={600}
+                      width={2400}
+                      height={2400}
                     />
                   </div>
                 </div>
@@ -88,6 +88,13 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
           </div>
         </div>
       )}
+      <style jsx>{`
+        @media (max-width: 640px) {
+          .bg-white {
+            max-height: 80vh;
+          }
+        }
+      `}</style>
     </>
   );
 };
