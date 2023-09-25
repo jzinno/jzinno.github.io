@@ -82,10 +82,7 @@ const Pubs: React.FC = () => {
         <h1 className="text-2xl font-bold select-none pb-2 w-1/2 text-center mx-auto border-gray-300">
           Publications
         </h1>
-        <h4
-          className="text-lg font-semibold select-none p-2 w-1/2 text-center mx-auto border-gray-300"
-          style={{ maxWidth: "50rem" }}
-        >
+        <h4 className="text-sm font-semibold select-none pb-2 w-1/2 text-center mx-auto border-gray-300">
           Selcet a publication to learn more about it.
         </h4>
         <div className="grid grid-cols-1 mb-20 px-10 gap-4">
