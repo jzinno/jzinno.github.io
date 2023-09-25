@@ -63,7 +63,9 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
                 ))}
               </p>
               <p className="text-blue-500 mb-2">
-                <a href={`https://${publication.doi}`}>{publication.doi}</a>
+                <a href={`https://${publication.doi}`} target="_blank">
+                  {publication.doi}
+                </a>
               </p>
             </div>
           </div>
@@ -114,7 +116,9 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
                     ))}
                   </p>
                   <p className="text-blue-500 mb-2">
-                    <a href={`https://${publication.doi}`}>{publication.doi}</a>
+                    <a href={`https://${publication.doi}`} target="_blank">
+                      {publication.doi}
+                    </a>
                   </p>
                   <div className="text-gray-700 text-sm mt-4 mb-20">
                     {publication.abstract}

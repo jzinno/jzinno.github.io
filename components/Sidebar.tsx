@@ -47,10 +47,10 @@ const Sidebar: React.FC = () => {
             <a href="mailto:johnzinno1@gmail.com">
               <FiMail className="text-gray-700 hover:text-gray-900 text-2xl hover:scale-110 transition-all duration-200 ease-in-out" />
             </a>
-            <a href="https://github.com/jzinno">
+            <a href="https://github.com/jzinno" target="_blank">
               <FaGithub className="text-gray-700 hover:text-gray-900 text-2xl hover:scale-110 transition-all duration-200 ease-in-out ml-4" />
             </a>
-            <a href="https://www.linkedin.com/in/jzinno/">
+            <a href="https://www.linkedin.com/in/jzinno/" target="_blank">
               <FaLinkedin className="text-gray-700 hover:text-gray-900 text-2xl hover:scale-110 transition-all duration-200 ease-in-out ml-4" />
             </a>
           </div>
