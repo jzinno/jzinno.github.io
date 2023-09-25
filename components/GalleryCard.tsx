@@ -76,7 +76,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
                   <div className="text-center">
                     {title && <h2 className="text-m font-bold m-2">{title}</h2>}
                     <div className="max-h-[40vh] overflow-y-auto pb-0">
-                      <p className="text-gray-700 mb-2 ">{about}</p>
+                      <p className="text-gray-700 mb-10 ">{about}</p>
                     </div>
                     <p className="text-blue-500 mb-2">
                       <a href={blog}>{blog}</a>
