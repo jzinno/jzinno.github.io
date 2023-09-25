@@ -52,10 +52,12 @@ const Gallery: React.FC = () => {
         </div>
       </main>
       <Sidebar />
-      <div className="text-center fixed bottom-0 left-0 w-full">
-        <WaveComponent startColor="#ff5e62" endColor="#ff9966" />
+      <div className="z-50">
+        <div className="text-center fixed bottom-0 left-0 w-full">
+          <WaveComponent startColor="#ff5e62" endColor="#ff9966" />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
