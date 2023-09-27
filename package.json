@@ -7,8 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "next build && next export && touch out/.nojekyll && npx gh-pages -d out",
-    "predeploy": "rm -rf out"
+    "deploy": "next build && npx gh-pages -d out",
+    "predeploy": "rm -rf out",
+    "export": "next build"
   },
   "keywords": [],
   "author": "",
