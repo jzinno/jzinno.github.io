@@ -21,6 +21,7 @@ const Home: React.FC = () => {
     <div className="flex flex-col min-h-screen bg-gray-100 ">
       <Head>
         <title>John Zinno</title>
+        <meta property="og:image" content="/angelslanding.png" />
       </Head>
       <main className="flex pt-14 justify-center items-center h-auto bg-gray-100 w-full">
         <div className="shadow-xl rounded-xl bg-gray-100 m-2">
