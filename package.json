@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "next build && npx gh-pages -d out",
+    "deploy": "next build && npx gh-pages -d out --branch=gh-pages",
     "predeploy": "rm -rf out",
     "export": "next build"
   },
