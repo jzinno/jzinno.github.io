@@ -41,11 +41,11 @@ const Home: React.FC = () => {
               </h1>
               <p className="text-lg subpixel-antialiased text-slate-300 text-center select-none px-4 z-10">
                 As a Genomics Data Scientist, I am very interested in the power
-                of deep learning and its potential in genomics and
-                bioinformatics. My recent work particularly emphasizes using
-                neural networks and generative models to decode complex genetic
-                signatures, augmenting single-cell 'omics' annotation and
-                revolutionizing our understanding of cellular diversity.
+                of machine learning / deep learning and its applications in
+                genomics and bioinformatics. My recent work particularly
+                emphasizes using Baysien and generative models to analyze
+                single-cell multiomics data towards understanding somatic
+                mosaicism and characterizing genotype-phenotype relationships.
               </p>
             </div>
           </div>
