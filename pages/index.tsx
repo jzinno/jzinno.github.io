@@ -44,7 +44,7 @@ const Home: React.FC = () => {
                 As a Genomics Data Scientist, I am very interested in the power
                 of machine learning / deep learning and its applications in
                 genomics and bioinformatics. My recent work particularly
-                emphasizes using Baysien and generative models to analyze
+                emphasizes using Bayesian and generative models to analyze
                 single-cell multiomics data towards understanding somatic
                 mosaicism and characterizing genotype-phenotype relationships.
               </p>

@@ -17,7 +17,7 @@ const Gallery: React.FC = () => {
       title:
         "Single cell  whole genome sequencing Approximate Bayesian Computation",
       about:
-        "Here we look at single cell whole genome sequencing data on a pediatric B-ALL patient. Interestingly we observe two mutations in the same codon of JAK2. We use ABC to infer the joint posterior distrobution of the age of onset and fitness of these B-ALL clones and find that the two mutations have similar characteristics, this finding is consistent with the phylogeny of the clones. It would be interesting to observe subclonal diversity where sibling clones have different fitnesse advantages. I'm sure we will see this in the future.",
+        "Here we look at single cell whole genome sequencing data on a pediatric B-ALL patient. Interestingly we observe two mutations in the same codon of JAK2. We use ABC to infer the joint posterior distrobution of the age of onset and fitness of these B-ALL clones and find that the two mutations have similar characteristics, this finding is consistent with the phylogeny of the clones. It would be interesting to observe subclonal diversity where sibling clones have different fitness advantages. I'm sure we will see this in the future.",
       blog: "",
     },
     {
