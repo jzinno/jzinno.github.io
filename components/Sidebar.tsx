@@ -44,7 +44,7 @@ const Sidebar: React.FC = () => {
       >
         <div className="flex justify-center p-4">
           <div className="flex items-center mr-4">
-            <a href="mailto:johnzinno1@gmail.com">
+            <a href="mailto:johnzinno14@gmail.com">
               <FiMail className="text-gray-700 hover:text-gray-900 text-2xl hover:scale-110 transition-all duration-200 ease-in-out" />
             </a>
             <a href="https://github.com/jzinno" target="_blank">
