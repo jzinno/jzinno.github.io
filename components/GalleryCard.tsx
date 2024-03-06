@@ -54,7 +54,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
             <div className="p-4 overflow-y-auto bg-white">
               <div className="flex flex-col md:flex-row md:items-center">
                 <div className="md:w-3/5 md:mr-4 mb-2">
-                  <div className="m-2">
+                  <div className="m-2 rounded-lg overflow-hidden">
                     <Image
                       src={featureImage}
                       alt={title}

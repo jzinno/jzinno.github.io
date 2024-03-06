@@ -7,6 +7,14 @@ import GalleryCard from "../components/GalleryCard";
 const Gallery: React.FC = () => {
   const galleryItems = [
     {
+      featureImage: "/oci-blog.jpg",
+      title:
+        "Accelerating Human Somatic Mosaicism Research with Single-Cell Genomics and GPU Computing",
+      about:
+        "In collaboration Oracle we have developed pipelines for constructing the world's largest human single-cell multiomic phylogenies as record speeds. This was made possible through the innovative use of single-cell whole genome and whole transcriptome sequencing (SMART PTA), which allows for the analysis of genetic material at an unprecedented single-cell resolution and scale. By leveraging Oracle's GPU computing resources, the project significantly accelerated the processing of massive datasets, enabling the rapid analysis of many thousands of single-cell genomes. This work not only enhances our understanding of human somatic evolution but also paves the way for future advancements in personalized medicine and genomic research.",
+      blog: "https://blogs.oracle.com/cloud-infrastructure/post/oci-ny-genome-center-singlecell-genome-collab",
+    },
+    {
       featureImage: "/TP53_diffmap.png",
       title: "Phenotype - Genotype Linkage",
       about: "",
