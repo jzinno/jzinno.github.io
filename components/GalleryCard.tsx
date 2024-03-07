@@ -79,7 +79,9 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
                       <p className="text-gray-700 mb-10 ">{about}</p>
                     </div>
                     <p className="text-blue-500 mb-2">
-                      <a href={blog}>{blog}</a>
+                      <a href={blog} target="_blank" rel="noopener noreferrer">
+                        {blog}
+                      </a>
                     </p>
                   </div>
                 </div>
