@@ -43,7 +43,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
               <Image
                 src={featureImage}
                 alt={title}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain max-w-screen-lg"
                 width={600}
                 height={600}
               />
@@ -67,7 +67,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
                     <Image
                       src={featureImage}
                       alt={title}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain max-w-screen-lg"
                       width={2400}
                       height={2400}
                     />
