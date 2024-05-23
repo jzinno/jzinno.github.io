@@ -28,7 +28,7 @@ const Gallery: React.FC = () => {
       blog: "",
     },
     {
-      featureImage: "/ball_abc.png",
+      featureImage: "/ball_abc2.png",
       title:
         "Single cell  whole genome sequencing Approximate Bayesian Computation",
       about:
