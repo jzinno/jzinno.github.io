@@ -25,6 +25,12 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     setIsModalOpen(false);
   };
 
+  const handleBackgroundClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      handleModalClose();
+    }
+  };
+
   return (
     <>
       <div
@@ -49,7 +55,10 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
         </div>
       </div>
       {isModalOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm flex justify-center items-center z-50">
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm flex justify-center items-center z-50"
+          onClick={handleBackgroundClick}
+        >
           <div className="bg-white rounded-lg shadow-md overflow-hidden w-11/12 relative">
             <div className="p-4 overflow-y-auto bg-white">
               <div className="flex flex-col md:flex-row md:items-center">

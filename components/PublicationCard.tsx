@@ -26,6 +26,12 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
     setIsModalOpen(false);
   };
 
+  const handleBackgroundClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      handleModalClose();
+    }
+  };
+
   return (
     <>
       <div
@@ -76,8 +82,11 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
         </div>
       </div>
       {isModalOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center backdrop-blur-sm items-center ">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden w-11/12 relative backdrop-filter ">
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center backdrop-blur-sm items-center"
+          onClick={handleBackgroundClick}
+        >
+          <div className="bg-white rounded-lg shadow-md overflow-hidden w-11/12 relative backdrop-filter">
             <div
               className="p-4"
               style={{ maxHeight: "75vh", overflowY: "auto" }}
