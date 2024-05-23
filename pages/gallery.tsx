@@ -18,7 +18,7 @@ const Gallery: React.FC = () => {
       featureImage: "/torus.gif",
       title: "Spatial Moran Evolution on a Torus",
       about:
-        "A fun visualization of spatial Moran evolution on a torus. The goal here was to build a simulation framework to perform approximate Bayesian computation on competing clones in the context of human esophageal tissue. This approximates their spatial distribution to an infinite surface via the torus topology given enough simulated cells. Later work has incorporated cell layers and dynamic lineage tracking to explore the spatial dynamics of clones gaining relative fitness perturbing mutations.",
+        "A fun visualization of spatial Moran evolution on a torus. The goal here was to build a simulation framework to perform approximate Bayesian computation on competing clones in the context of human esophageal tissue. This approximates their spatial distribution to an infinite surface via the torus topology given enough simulated cells. Later work has incorporated cell layers and dynamic lineage tracking to explore the spatial dynamics of clones gaining relative fitness perturbing mutations. Cells are pixels, color indicates globally normalized fitness on the viridis cmap.",
       blog: "",
     },
     {
@@ -32,7 +32,7 @@ const Gallery: React.FC = () => {
       title:
         "Single cell  whole genome sequencing Approximate Bayesian Computation",
       about:
-        "Here we look at single cell whole genome sequencing data on a pediatric B-ALL patient. Interestingly we observe two mutations in the same codon of JAK2. We use ABC to infer the joint posterior distrobution of the age of onset and fitness of these B-ALL clones and find that the two mutations have similar characteristics, this finding is consistent with the phylogeny of the clones. It would be interesting to observe subclonal diversity where sibling clones have different fitness advantages. I'm sure we will see this in the future.",
+        "Here we look at single cell whole genome sequencing data on a pediatric B-ALL patient. Interestingly we observe two mutations in the same codon of JAK2. We use ABC to infer the joint posterior distribution of the age of onset and fitness of these B-ALL clones and find that the two mutations have similar characteristics, this finding is consistent with the phylogeny of the clones. It would be interesting to observe subclonal diversity where sibling clones have different fitness advantages. I'm sure we will see this in the future.",
       blog: "",
     },
     {
