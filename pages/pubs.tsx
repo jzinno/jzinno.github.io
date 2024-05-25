@@ -8,6 +8,32 @@ const Pubs: React.FC = () => {
   const publications = [
     {
       title:
+        "Genotype-to-phenotype mapping of somatic clonal mosaicism via single-cell co-capture of DNA mutations and mRNA transcripts",
+      journal: "bioRxiv",
+      authors: [
+        "Dennis J Yuan",
+        "John Zinno",
+        "Theo Botella",
+        "Dalia Dhingra",
+        "Shu Wang",
+        "Allegra Hawkins",
+        "Ariel Swett",
+        "Jesus Sotelo",
+        "Ramya Raviram",
+        "Clayton Hughes",
+        "Catherine Potenski",
+        "Akira Yokoyama",
+        "Nobuyuki Kakiuchi",
+        "Seishi Ogawa",
+        "Dan A Landau",
+      ],
+      doi: "doi.org/10.1101/2024.05.22.595241",
+      featureImage: "/scG2P.png",
+      abstract:
+        "Somatic mosaicism is a hallmark of malignancy that is also pervasively observed in human physiological aging, with clonal expansions of cells harboring mutations in recurrently mutated driver genes. Bulk sequencing of tissue microdissection captures mutation frequencies, but cannot distinguish which mutations co-occur in the same clones to reconstruct clonal architectures, nor phenotypically profile clonal populations to delineate how driver mutations impact cellular behavior. To address these challenges, we developed single-cell Genotype-to-Phenotype sequencing (scG2P) for high-throughput, highly-multiplexed, single-cell joint capture of recurrently mutated genomic regions and mRNA phenotypic markers in cells or nuclei isolated from solid tissues. We applied scG2P to aged esophagus samples from five individuals with high alcohol and tobacco exposure and observed a clonal landscape dominated by a large number of clones with a single driver event, but only rare clones with two driver mutations. NOTCH1 mutants dominate the clonal landscape and are linked to stunted epithelial differentiation, while TP53 mutants and double-driver mutants promote clonal expansion through both differentiation biases and increased cell cycling. Thus, joint single-cell highly multiplexed capture of somatic mutations and mRNA transcripts enables high resolution reconstruction of clonal architecture and associated phenotypes in solid tissue somatic mosaicism.",
+    },
+    {
+      title:
         "Omicron Spike protein has a positive electrostatic surface that promotes ACE2 recognition and antibody escape",
       journal: "Frontiers in Virology",
       authors: [
