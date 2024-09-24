@@ -7,9 +7,9 @@ import { FaChevronRight } from "react-icons/fa";
 const Experience: React.FC = () => {
   const experiences = [
     {
-      role: "Genomics Data Scientist / AI",
+      role: "(Sr.) Genomics Data Scientist / AI",
       company: "New York Genome Center & Weill Cornell Medicine,",
-      duration: "Sep 2022 - Present",
+      duration: "September 2022 - Senior January 2024 - Present",
       responsibilities: [
         "Developing deep learning models for single-cell multiomics data",
         "Developing novel phylogenetic methods for single-cell multiomics data",

@@ -60,6 +60,9 @@ const Gallery: React.FC = () => {
         <h1 className="text-2xl font-bold select-none my-4 w-1/2 text-center mx-auto border-gray-300">
           Gallery
         </h1>
+        <h4 className="text-sm font-semibold select-none pb-2 w-1/2 text-center mx-auto border-gray-300">
+          Select an item to learn more about it
+        </h4>
         <div className="grid grid-cols-1 md:grid-cols-2  mb-20 lg:grid-cols-3 gap-4 p-4">
           {galleryItems.map((item, index) => (
             <GalleryCard key={index} {...item} />
