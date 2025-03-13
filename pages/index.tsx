@@ -11,8 +11,8 @@ const images = [
   { src: "/smaht.png", alt: "smaht" },
   { src: "/cegs.png", alt: "cegs" },
   { src: "/landau.png", alt: "landau" },
-  { src: "/stealth.png", alt: "stealth" },
-  { src: "/RxCovea.png", alt: "RxCovea" },
+  // { src: "/stealth.png", alt: "stealth" },
+  // { src: "/RxCovea.png", alt: "RxCovea" },
   { src: "/thetree-2.png", alt: "thetree" },
 ];
 
@@ -20,7 +20,7 @@ const previousImages = [
   { src: "/nyulh.png", alt: "nyulh" },
   { src: "/nyu.png", alt: "nyu" },
   { src: "/cgsb.png", alt: "cgsb" },
-  { src: "/sbu.png", alt: "sbu" },
+  // { src: "/sbu.png", alt: "sbu" },
 ];
 
 const Home: React.FC = () => {
@@ -48,8 +48,12 @@ const Home: React.FC = () => {
                 John Zinno
               </h1>
               <p className="text-lg subpixel-antialiased text-slate-300 text-center px-4 z-10">
-                <strong>I like to train deep neural nets;</strong> in that pursuit I get to do so many exciting things.
-                We develop multi-omics technologies to understand the relationship between genotype and phenotype at unprecedented scales, thousands of whole genomes and trascriptomes in the same cells per patient toward understanding somatic mosaicism. We can look back in time over phylogenetic trees of cells to see when critical mutations happen, thier heritable cell states, and discover novel biology in the process. With that comes a lot of exciting engineering problems and even more exciting biology. But the discoveries in biology are the product of the engineering (and wet lab wizards). Processing tens of thousands whole genomes neccessitates leveraging distributed computing over a large GPU cluster with specialized code and many similar feats. I also get to architect and train SOTA models for <i>de novo</i> cfDNA cancer detection, take advantage of microsatellites for phylogenetic reconstruction in high-throughput targeted scDNAseq, develop jitted JAX somatic evolution kernels for approximate bayesian computation, and author interfaces for LLMs with genomics facing APIs. I'm enthusiastic about and active in the open source "AI" community and looking forward to what we build.
+              As a Genomics Data Scientist, I am very interested in the power
+              of machine learning / deep learning and its applications in
+              genomics and bioinformatics. My recent work particularly
+              emphasizes using Bayesian and generative models to analyze
+              single-cell multiomics data towards understanding somatic
+              mosaicism and characterizing genotype-phenotype relationships.
               </p>
             </div>
           </div>
@@ -58,7 +62,7 @@ const Home: React.FC = () => {
       <Sidebar />
       <div className="flex flex-col items-center h-full w-full mb-16">
         <div className="w-full max-w-7xl px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 place-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 place-items-center">
             {images.map((image, index) => (
               <Image
                 key={index}
@@ -75,7 +79,7 @@ const Home: React.FC = () => {
             <span className="flex-shrink mx-4 text-gray-400">Previous Affiliations</span>
             <div className="flex-grow border-t border-gray-400"></div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 place-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 place-items-center">
             {previousImages.map((image, index) => (
               <Image
                 key={index}
