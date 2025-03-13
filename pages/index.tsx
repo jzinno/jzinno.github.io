@@ -8,14 +8,21 @@ import Sidebar from "../components/Sidebar";
 const images = [
   { src: "/wcm.png", alt: "wcm" },
   { src: "/nygc.png", alt: "nygc" },
-  { src: "/nyulh.png", alt: "nyulh" },
-  { src: "/nyu.png", alt: "nyu" },
-  { src: "/landau.png", alt: "landau" },
   { src: "/smaht.png", alt: "smaht" },
   { src: "/cegs.png", alt: "cegs" },
+  { src: "/landau.png", alt: "landau" },
+  { src: "/stealth.png", alt: "stealth" },
+  { src: "/RxCovea.png", alt: "RxCovea" },
   { src: "/thetree-2.png", alt: "thetree" },
-  // add more images as needed
 ];
+
+const previousImages = [
+  { src: "/nyulh.png", alt: "nyulh" },
+  { src: "/nyu.png", alt: "nyu" },
+  { src: "/cgsb.png", alt: "cgsb" },
+  { src: "/sbu.png", alt: "sbu" },
+];
+
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 ">
@@ -53,18 +60,37 @@ const Home: React.FC = () => {
         </div>
       </main>
       <Sidebar />
-      <div className="flex justify-center items-center h-full w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 justify-items-center place-items-center">
-          {images.map((image, index) => (
-            <Image
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              width={250}
-              height={250}
-              className="object-cover"
-            />
-          ))}
+      <div className="flex flex-col items-center h-full w-full mb-16">
+        <div className="w-full max-w-7xl px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 place-items-center">
+            {images.map((image, index) => (
+              <Image
+                key={index}
+                src={image.src}
+                alt={image.alt}
+                width={250}
+                height={250}
+                className="object-cover"
+              />
+            ))}
+          </div>
+          <div className="relative flex items-center py-5">
+            <div className="flex-grow border-t border-gray-400"></div>
+            <span className="flex-shrink mx-4 text-gray-400">Previous Affiliations</span>
+            <div className="flex-grow border-t border-gray-400"></div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 place-items-center">
+            {previousImages.map((image, index) => (
+              <Image
+                key={index}
+                src={image.src}
+                alt={image.alt}
+                width={250}
+                height={250}
+                className="object-cover"
+              />
+            ))}
+          </div>
         </div>
       </div>
       <div className="text-center fixed bottom-0 left-0 w-full">
