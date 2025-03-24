@@ -8,6 +8,36 @@ const Pubs: React.FC = () => {
   const publications = [
     {
       title:
+        "Measuring Longitudinal Genome-wide Clonal Evolution of Pediatric Acute Lymphoblastic Leukemia at Single-Cell Resolution",
+      journal: "bioRxiv",
+      authors: [
+        "Yakun Pang",
+        "Tamara Prieto",
+        "Veronica Gonzalez-Pena",
+        "Athena Aragon",
+        "Yuntao Xia",
+        "Sheng Kao",
+        "Sri Rajagopalan",
+        "John Zinno",
+        "Jean Quentin",
+        "Julien Laval",
+        "Dennis Yuan",
+        "Nathaniel Omans",
+        "David Klein",
+        "Matthew MacKay",
+        "Iwijn De Vlaminck",
+        "John Easton",
+        "William Evans",
+        "Dan A. Landau",
+        "Charles Gawad",
+      ],
+      doi: "doi.org/10.1101/2025.03.19.644196",
+      featureImage: "/ball_abc2.png",
+      abstract:
+        "Over 80% of children with acute lymphoblastic leukemia (pALL) can be cured by treating them with multiple chemotherapeutic agents administered over several years, whereas pALL is incurable with 1-3 medications, suggesting significant variation in drug susceptibility across clonal populations. While bulk sequencing studies indicate that pALL cells contain relatively few genetic variants compared to other cancers, the true extent of genetic diversity at the single-cell level remains unknown. Here, we used three complementary approaches to investigate pALL genetic heterogeneity: error-corrected bulk sequencing, single-cell exome sequencing, and primary template-directed amplification (PTA)-enabled single-cell genome sequencing. We discovered that some ETV6-RUNX1 samples harbor multiple independent ras clones and that individual pALL cells harbor substantially more mutations (mean 3,553 per cell) than detected in bulk samples (mean 965 mutations), with variant signatures suggesting both early and late APOBEC-driven mutagenesis in ETV6-RUNX1 patients. Using PTA-based phylogenetic analysis of over 150 single-cell genomes from four pALL patients, we identified heritable phenotypes associated with specific genetic alterations, including some low-frequency clones that are preferentially selected for during chemotherapy treatment. Our findings reveal previously undetected genetic diversity in pALL and suggest that pre-existing mutations influence treatment response, with implications for future therapeutic strategies. This study provides a high-resolution framework for understanding cancer clonal evolution during treatment, yielding important new insights for developing more effective therapeutic approaches for pALL.",
+    },
+    {
+      title:
         "Genotype-to-phenotype mapping of somatic clonal mosaicism via single-cell co-capture of DNA mutations and mRNA transcripts",
       journal: "bioRxiv",
       authors: [
