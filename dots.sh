@@ -32,7 +32,7 @@ echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
 
 git clone https://github.com/supercrabtree/k.git $HOME/k
 echo "source ~/k/k.sh" >> ~/.zshrc
-echo "alias k='k -h" >> ~/.zshrc
+echo "alias k='k -h' >> ~/.zshrc
 
 git clone https://github.com/jzinno/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 echo "alias vi='nvim'" >> $HOME/.zshrc
