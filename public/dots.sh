@@ -8,7 +8,7 @@ fi
 
 bash <(curl -s https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch)
 
-$SUDO apt update -y && $SUDO apt upgrade -y && $SUDO apt install zsh bat -y
+$SUDO apt update -y && $SUDO apt upgrade -y && $SUDO apt install rsync zsh bat -y
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 $SUDO rm -rf /opt/nvim
