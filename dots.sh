@@ -25,18 +25,20 @@ done
 echo "export PATH=\"$PATH:/opt/nvim-linux-x86_64/bin\"" >> ~/.zshrc
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+echo "source ~/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 
 git clone https://github.com/supercrabtree/k.git $HOME/k
 echo "source ~/k/k.sh" >> ~/.zshrc
-echo "alias k='k -h' >> ~/.zshrc
+echo "alias k='k -h'" >> ~/.zshrc
 
 git clone https://github.com/jzinno/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 echo "alias vi='nvim'" >> $HOME/.zshrc
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
-echo 'source $HOME/.local/bin/env' >> ~/.zshrc
-echo 'alias bat="batcat --paging=never"' >> ~/.zshrc
+echo "source $HOME/.local/bin/env" >> ~/.zshrc
+echo "alias bat='batcat --paging=never'" >> ~/.zshrc
+
+sed -i '1i bash <(curl -s https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch)' ~/.zshrc
