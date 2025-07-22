@@ -1,4 +1,4 @@
-import { useEffect, useState, FC } from "react";
+import { useEffect, useState, FC, type JSX } from "react";
 
 interface SvgWaveProps {
   opacity: number;
