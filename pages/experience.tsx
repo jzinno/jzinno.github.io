@@ -49,7 +49,7 @@ const Experience: React.FC = () => {
     {
       role: "Teaching Assistant",
       company: "Florida Southern College,",
-      duration: "August 2014 — May 2016",
+      duration: "August 2014 - May 2016",
       responsibilities: [
         "Held office hour in organic chemistry and biochemistry",
         "Prepared and graded exams and quizzes",
