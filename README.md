@@ -16,3 +16,9 @@ npm install .
 
 npm run dev
 ```
+
+# simple dotfiles
+
+```bash
+curl -LsSf https://jzinno.github.io/dots.sh | bash
+```
