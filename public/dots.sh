@@ -8,7 +8,7 @@ fi
 
 bash <(curl -s https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch)
 
-$SUDO apt update -y && $SUDO apt upgrade -y && $SUDO apt install git rsync zsh fastfetch -y
+$SUDO apt update -y && $SUDO apt upgrade -y && $SUDO apt install git rsync unzip zsh neofetch -y
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 mkdir -p $HOME/.local
@@ -49,7 +49,6 @@ echo "# Tool sources" >> $HOME/.zshrc
 echo "source $HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme" >> $HOME/.zshrc
 echo "source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
 echo "source $HOME/.zsh/k/k.sh" >> $HOME/.zshrc
-echo "source $HOME/.local/bin/env" >> $HOME/.zshrc
 echo "source $HOME/.cargo/env" >> $HOME/.zshrc
 echo "eval \"\$(zoxide init zsh)\"" >> $HOME/.zshrc
 echo "" >> $HOME/.zshrc
@@ -60,4 +59,4 @@ echo "alias bat='bat --paging=never'" >> $HOME/.zshrc
 echo "alias k='k -h'" >> $HOME/.zshrc
 echo "alias rm='rm -f'" >> $HOME/.zshrc
 
-sed -i '1i command -v fastfetch >/dev/null && fastfetch' $HOME/.zshrc
+sed -i '1i command -v neofetch >/dev/null && neofetch' $HOME/.zshrc
