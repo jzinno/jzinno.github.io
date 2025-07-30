@@ -8,8 +8,8 @@ import {
   FaGraduationCap,
   FaBook,
   FaImages,
+  FaFileAlt,
 } from "react-icons/fa";
-
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,9 +27,8 @@ const Sidebar: React.FC = () => {
     { href: "/edu", text: "Education", icon: <FaGraduationCap /> },
     { href: "/pubs", text: "Publications", icon: <FaBook /> },
     { href: "/gallery", text: "Gallery", icon: <FaImages /> },
-  ];
-
-  return (
+    { href: "/jzinnoCV.pdf", text: "CV", icon: <FaFileAlt />, external: true },
+  ];  return (
     <>
       <button
         className="fixed bg-gray-100/30 backdrop-blur-md top-0 left-0 m-3 text-4xl text-slate-900 opacity-70 rounded-md focus:outline-none hover:opacity-100 hover:scale-110 transition-all duration-200 ease-in-out"
@@ -76,16 +75,26 @@ const Sidebar: React.FC = () => {
               className="px-6 py-2 hover:scale-105 cursor-pointer text-slate-900 select-none transition-all duration-200 ease-in-out flex items-center"
             >
               {link.icon}
-              <Link
-                href={link.href}
-                className="text-gray-700 ml-2 text-xl hover:text-gray-900 transition-all duration-200 ease-in-out"
-              >
-                {link.text}
-              </Link>
+              {link.external ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 ml-2 text-xl hover:text-gray-900 transition-all duration-200 ease-in-out"
+                >
+                  {link.text}
+                </a>
+              ) : (
+                <Link
+                  href={link.href}
+                  className="text-gray-700 ml-2 text-xl hover:text-gray-900 transition-all duration-200 ease-in-out"
+                >
+                  {link.text}
+                </Link>
+              )}
             </li>
           ))}
-        </ul>
-      </div>
+        </ul>      </div>
     </>
   );
 };
