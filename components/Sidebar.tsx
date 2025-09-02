@@ -37,7 +37,7 @@ const Sidebar: React.FC = () => {
         <FiMenu />
       </button>
       <div
-        className={`fixed top-0 left-0 max-w-1/2 h-full bg-white/10 backdrop-blur-md shadow-2xl transition-all duration-300 transform   ${
+        className={`fixed top-0 left-0 max-w-1/2 h-full bg-white/10 backdrop-blur-md shadow-2xl transition-all duration-300 transform z-10  ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -94,7 +94,8 @@ const Sidebar: React.FC = () => {
               )}
             </li>
           ))}
-        </ul>      </div>
+        </ul>     
+      </div>
     </>
   );
 };
