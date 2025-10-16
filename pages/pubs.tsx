@@ -3,9 +3,70 @@ import Sidebar from "../components/Sidebar";
 import Footer from "../components/ThreeSlotFooter";
 import WaveComponent from "../components/WaveComponent";
 import PublicationCard from "../components/PublicationCard";
+import { title } from "process";
 
 const Pubs: React.FC = () => {
   const publications = [
+    {
+      title: "Large-scale single-cell phylogenetic mapping of clonal evolution in the human aging esophagus",
+      authors: [
+        "Tamara Prieto",
+        "Dennis J Yuan",
+        "John Zinno",
+        "Clayton Hughes",
+        "Nicholas Midler",
+        "Sheng Kao",
+        "Jani Huuhtanen",
+        "Ramya Raviram",
+        "Fenia Fotopoulou",
+        "Neil Ruthen",
+        "Srinivas Rajagopalan",
+        "Joshua S Schiffman",
+        "Andrew R D Avino",
+        "Sang-Ho Yoon",
+        "Jesus Sotelo",
+        "Nathaniel D Omans",
+        "Noelle Wheeler",
+        "Alejandro Garces",
+        "Barun Pradhan",
+        "Alexandre Pellan Cheng",
+        "Nicolas Robine",
+        "Catherine Potenski",
+        "Katharine Godfrey",
+        "Nobuyuki Kakiuchi",
+        "Akira Yokoyama",
+        "Seishi Ogawa",
+        "Julian Abrams",
+        "Ivan Raimondi",
+        "Dan A Landau"
+      ],
+      featureImage: "/pta.png",
+      journal: "bioRxiv",
+      doi: "doi.org/10.1101/2025.10.11.681805",
+      abstract: "The human somatic genome evolves throughout our lifespan, producing mosaic individuals comprising clones harboring different mutations across tissues. While clonal expansions in the hematopoietic system have been extensively characterized and reported to be nearly ubiquitous, clonal mosaicism (CM) has more recently also been described across multiple solid tissues. However, outstanding questions remain about the parameters and processes of human somatic evolution in non-cancerous solid human tissues, including when clones arise, how they evolve over time, and what mechanisms lead to their expansion. Questions of timing and clonal dynamics can be addressed through phylogenetic reconstruction, which serves as a ′temporal microscope′, while uncovering the mechanisms of expansion necessitates simultaneous phenotypic profiling. To address this gap, here we develop Single-cell Miniaturized Automated Reverse Transcription and Primary Template-directed Amplification (SMART-PTA) for joint single-cell whole-genome and whole-transcriptome sequencing for large scale and cost-efficient interrogation of solid tissue CM. We established a workflow that generates hundreds of matched single-cell whole genome and transcriptome libraries within a week. We profiled phenotypically normal esophagus tissue from four aged donors′ and used somatic variants to build high-resolution single-cell lineages from >2,700 cells with accompanying transcriptomic information, reconstructing >70 years of somatic evolution. T cell expansions identified from T cell receptor (TCR) sequences validated the clonal structure of the single-nucleotide variant (SNV)-based phylogenies and phylogenetic cross-correlation analysis showed that epithelial cells had higher degrees of shared ancestry by spatial location compared to immune cells. Mapping mutation signatures to the phylogenetic tree revealed the emergence of tobacco/alcohol exposure-related signatures later in life, consistent with the donors′ exposure histories. We identified variants in driver genes that were previously reported in the phenotypically normal esophagus, detecting clonal expansions harboring mutations in genes including TP53 and FAT1. We mapped the evolution of clones with both monoallelic as well as biallelic TP53 loss, including a clone associated with high expression of cell cycling genes and higher chromosome instability. Leveraging the matched transcriptome data, we uncovered cell type biases in mutant clones, with a higher proportion of TP53 or FAT1-mutant cells in an earlier basal epithelial cell state compared to wild-type cells. We further observed copy-neutral loss of heterozygosity (CNLOH) events on chromosome 9q that spanned the NOTCH1 locus in up to ~35% of epithelial cells. Mapping CNLOH events to the phylogenetic tree revealed a striking pattern in which CNLOH was separately acquired many times, reflecting convergent evolution. Cells with CNLOH events were biased towards the earlier basal epithelial state, suggestive of a selective advantage that leads to prevalent recurrence of chr9q CNLOH. Together, we demonstrate that SMART-PTA is an efficient, scalable approach for single-cell whole-genome and whole-transcriptome profiling to build phenotypically annotated single-cell phylogenies with enough throughput and power for application to normal tissue somatic evolution. Moreover, we reconstruct the evolutionary history of the esophageal epithelium at high scale and resolution, providing a window into the dynamics and processes that shape clonal expansions in phenotypically normal tissues throughout a lifespan.",
+    },
+    {
+      title: "Single-cell mapping of regulatory DNA:Protein interactions",
+      authors: [
+        "Wei-Yu Chi",
+        "Sang-Ho Yoon",
+        "Evrim Goksel",
+        "Levan Mekerishvili",
+        "Joe Pelt",
+        "Yiyun Lin",
+        "Tamara Prieto",
+        "John Zinno",
+        "Saravanan Ganesan",
+        "Catherine Potenski",
+        "Franco Izzo",
+        "Dan A. Landau",
+        "Ivan Raimondi"
+      ],
+      featureImage: "/dnd.png",
+      journal: "bioRxiv",
+      doi: "doi.org/10.1101/2024.12.31.630903",
+      abstract: "Gene expression is coordinated by a multitude of transcription factors (TFs), whose binding to the genome is directed through multiple interconnected epigenetic signals, including chromatin accessibility and histone modifications. These complex networks have been shown to be disrupted during aging, disease, and cancer. However, profiling these networks across diverse cell types and states has been limited due to the technical constraints of existing methods for mapping DNA:Protein interactions in single cells. As a result, a critical gap remains in understanding where TFs or other chromatin remodelers bind to DNA and how these interactions are perturbed in pathological contexts. To address this challenge, we developed a transformative single-cell immuno-tethering DNA:Protein mapping technology. By coupling a species-specific antibody-binding nanobody to a cytosine base editing enzyme, this approach enables profiling of even weak or transient factor binding to DNA, a task that was previously unachievable in single cells. Thus, our Docking & Deamination followed by sequencing (D&D-seq) technique induces cytosine-to-uracil edits in genomic regions bound by the target protein, offering a novel means to capture DNA:Protein interactions with unprecedented resolution. Importantly, this technique can be seamlessly incorporated into common single-cell multiomics workflows, enabling multimodal analysis of gene regulation in single cells. We tested the ability of D&D-seq to record TF binding both in bulk and at the single-cell level by profiling CTCF and GATA family members, obtaining high specificity and efficiency, with clear identification of TF footprint and signal retention in the targeted cell subpopulations. Furthermore, the deamination reaction showed minimal off-target activity, with high concordance to bulk ChIP-seq reference data. Applied to primary human peripheral blood mononuclear cells (PBMCs), D&D-seq successfully identified CTCF binding sites and enabled integration with advanced machine-learning algorithms for predicting 3D chromatin structure. Furthermore, we integrated D&D-seq with single-cell genotyping to assess the impact of IDH2 mutations on CTCF binding in a human clonal hematopoiesis sample, uncovering altered binding and chromatin co-accessibility patterns in mutant cells. Altogether, D&D-seq represents an important technological advance enabling the direct mapping of TF or chromatin remodeler binding to the DNA in primary human samples, opening new avenues for understanding chromatin and transcriptional regulation in health and disease.",
+    },
     {
       title:
         "Measuring Longitudinal Genome-wide Clonal Evolution of Pediatric Acute Lymphoblastic Leukemia at Single-Cell Resolution",
