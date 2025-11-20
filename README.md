@@ -1,23 +1,15 @@
-# John Zinno's Website: jzinno.github.io
+# jzinno.github.io
 
-## *_Site currently under construction_*
+### *forever under construction*
 
-A lot more work to do here but it is fun to work on making a website from scratch.
+#### dev setup
 
-
-# Dev setup
-
-```
-git clone https://github.com/jzinno/jzinno.github.io.git
-
-cd jzinno.github.io.git
-
-npm install .
-
-npm run dev
+```bash
+git clone https://github.com/jzinno/jzinno.github.io.git && cd jzinno.github.io.git
+npm install . && npm run dev
 ```
 
-# simple dotfiles
+#### an iteration of my dotfiles
 
 ```bash
 curl -LsSf https://jzinno.github.io/dots.sh | bash
