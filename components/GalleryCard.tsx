@@ -56,7 +56,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
       </div>
       {isModalOpen && (
         <div
-          className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm flex justify-center items-center z-50"
+          className="fixed top-0 left-0 w-full h-full bg-gray-900/50 backdrop-filter backdrop-blur-sm flex justify-center items-center z-50"
           onClick={handleBackgroundClick}
         >
           <div className="bg-white rounded-lg shadow-md overflow-hidden w-11/12 relative">

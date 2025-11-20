@@ -71,7 +71,7 @@ const Experience: React.FC = () => {
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className="mb-4 p-4 border rounded-lg shadow-lg bg-white w-3/4 hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+            className="mb-4 p-4 border border-transparent rounded-lg shadow-lg bg-white w-3/4 hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
           >
             <h2 className="text-xl text-slate-800 font-bold">{exp.role}</h2>
             <h3 className="text-lg text-slate-800">{exp.company}</h3>

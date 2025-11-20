@@ -83,7 +83,7 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
       </div>
       {isModalOpen && (
         <div
-          className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center backdrop-blur-sm items-center"
+          className="fixed top-0 left-0 w-full h-full bg-gray-900/50 flex justify-center backdrop-blur-sm items-center z-50"
           onClick={handleBackgroundClick}
         >
           <div className="bg-white rounded-lg shadow-md overflow-hidden w-11/12 relative backdrop-filter">

@@ -1,29 +1,34 @@
-import { useCallback } from "react";
-import type { Container, Engine } from "tsparticles-engine";
-import Particles from "react-tsparticles";
+import { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+import type { Container, Engine } from "@tsparticles/engine";
 
 const ParticleBackground = () => {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
+  const [init, setInit] = useState(false);
 
-    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    await loadFull(engine);
+  // this should be run only once per application lifetime
+  useEffect(() => {
+    initParticlesEngine(async (engine: Engine) => {
+      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+      await loadFull(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      await console.log(container);
-    },
-    []
-  );
+  const particlesLoaded = async (container?: Container) => {
+    console.log(container);
+  };
+
+  if (!init) {
+    return null;
+  }
+
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
+      particlesLoaded={particlesLoaded}
       style={{ zIndex: -10 }}
       options={{
         fpsLimit: 120,
@@ -37,7 +42,9 @@ const ParticleBackground = () => {
               enable: false,
               mode: "repulse",
             },
-            resize: true,
+            resize: {
+              enable: true,
+            },
           },
           modes: {
             push: {
@@ -76,9 +83,8 @@ const ParticleBackground = () => {
           number: {
             density: {
               enable: true,
-              area: 800,
             },
-            value: 75,
+            value: 250,
           },
           opacity: {
             value: 0.5,
