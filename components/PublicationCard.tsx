@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { FiX } from "react-icons/fi";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface Publication {
   title: string;
@@ -35,9 +36,12 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
   return (
     <>
       <div
-        className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer  hover:scale-105 transition-all duration-200 ease-in-out"
+        className="group relative bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:scale-105 transition-all duration-200 ease-in-out"
         onClick={handleCardClick}
       >
+        <div className="pointer-events-none absolute top-2 right-2 text-slate-500 opacity-80 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200">
+          <FaExternalLinkAlt className="text-sm drop-shadow-sm" aria-label="Open details" />
+        </div>
         <div className="p-2 overflow-y-auto">
           <div className="flex flex-col md:flex-row md:items-center">
             <div className="md:w-1/3 md:mr-4 mb-2">
@@ -50,7 +54,7 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
               />
             </div>
             <div className="flex-1">
-              <h2 className="text-md text-slate-800 font-bold mb-2">
+              <h2 className="text-md text-slate-800 font-bold mb-2 pr-6">
                 {publication.title}
               </h2>
               <p className="text-slate-800 mb-2 italic font-semibold">
@@ -91,12 +95,12 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
               className="p-4"
               style={{ maxHeight: "75vh", overflowY: "auto" }}
             >
-              <div className="flex flex-col md:flex-row md:items-center">
-                <div className="md:w-1/3 md:mr-4 mb-2">
+              <div className="flex flex-col xl:flex-row xl:items-start gap-4">
+                <div className="w-full xl:w-1/3 flex-shrink-0">
                   <Image
                     src={publication.featureImage}
                     alt={publication.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto max-h-72 sm:max-h-80 md:max-h-96 xl:max-h-[70vh] object-contain rounded-md"
                     width={600}
                     height={600}
                   />
