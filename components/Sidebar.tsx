@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Link from "next/link";
 import { FiMenu, FiX, FiMail } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
@@ -7,9 +6,18 @@ import {
   FaBriefcase,
   FaGraduationCap,
   FaBook,
-  FaImages,
   FaFileAlt,
+  FaImages,
+  FaHandshake,
 } from "react-icons/fa";
+
+interface LinkItem {
+  href: string;
+  text: string;
+  icon: JSX.Element;
+  external?: boolean;
+}
+
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,14 +29,29 @@ const Sidebar: React.FC = () => {
     setIsOpen(false);
   };
 
-  const links = [
-    { href: "/", text: "Home", icon: <FaHome /> },
-    { href: "/experience", text: "Experience", icon: <FaBriefcase /> },
-    { href: "/edu", text: "Education", icon: <FaGraduationCap /> },
-    { href: "/pubs", text: "Publications", icon: <FaBook /> },
-    { href: "/gallery", text: "Gallery", icon: <FaImages /> },
+  const scrollToSection = (href: string) => {
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+
+    window.location.href = `/${href}`;
+  };
+
+  const links: LinkItem[] = [
+    { href: "#intro", text: "Home", icon: <FaHome /> },
+    { href: "#pubs", text: "Publications", icon: <FaBook /> },
+    { href: "#experience", text: "Experience", icon: <FaBriefcase /> },
+    { href: "#education", text: "Education", icon: <FaGraduationCap /> },
+    { href: "#gallery", text: "Gallery", icon: <FaImages /> },
+    { href: "#affiliations", text: "Affiliations", icon: <FaHandshake /> },
     { href: "/jzinnoCV.pdf", text: "CV", icon: <FaFileAlt />, external: true },
-  ];  return (
+  ];
+
+  return (
     <>
       <button
         className="fixed bg-gray-100/30 backdrop-blur-md top-0 left-0 m-3 text-4xl text-slate-900 opacity-70 rounded-md focus:outline-none hover:opacity-100 hover:scale-110 transition-all duration-200 ease-in-out"
@@ -81,20 +104,26 @@ const Sidebar: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 ml-2 text-xl hover:text-gray-900 transition-all duration-200 ease-in-out"
+                  onClick={closeSidebar}
                 >
                   {link.text}
                 </a>
               ) : (
-                <Link
+                <a
                   href={link.href}
                   className="text-gray-700 ml-2 text-xl hover:text-gray-900 transition-all duration-200 ease-in-out"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    scrollToSection(link.href);
+                    closeSidebar();
+                  }}
                 >
                   {link.text}
-                </Link>
+                </a>
               )}
             </li>
           ))}
-        </ul>     
+        </ul>
       </div>
     </>
   );

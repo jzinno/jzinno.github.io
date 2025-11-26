@@ -4,6 +4,9 @@ import Footer from "../components/ThreeSlotFooter";
 import WaveComponent from "../components/WaveComponent";
 import ParticleBackground from "../components/ParticleBackground";
 import Sidebar from "../components/Sidebar";
+import PublicationCard from "../components/PublicationCard";
+import GalleryCard from "../components/GalleryCard";
+import AccordionList from "../components/AccordionList";
 
 const images = [
   { src: "/wcm.png", alt: "wcm" },
@@ -23,77 +26,452 @@ const previousImages = [
   // { src: "/sbu.png", alt: "sbu" },
 ];
 
+const publications = [
+  {
+    title:
+      "Large-scale single-cell phylogenetic mapping of clonal evolution in the human aging esophagus",
+    authors: [
+      "Tamara Prieto",
+      "Dennis J Yuan",
+      "John Zinno",
+      "Clayton Hughes",
+      "Nicholas Midler",
+      "Sheng Kao",
+      "Jani Huuhtanen",
+      "Ramya Raviram",
+      "Fenia Fotopoulou",
+      "Neil Ruthen",
+      "Srinivas Rajagopalan",
+      "Joshua S Schiffman",
+      "Andrew R D Avino",
+      "Sang-Ho Yoon",
+      "Jesus Sotelo",
+      "Nathaniel D Omans",
+      "Noelle Wheeler",
+      "Alejandro Garces",
+      "Barun Pradhan",
+      "Alexandre Pellan Cheng",
+      "Nicolas Robine",
+      "Catherine Potenski",
+      "Katharine Godfrey",
+      "Nobuyuki Kakiuchi",
+      "Akira Yokoyama",
+      "Seishi Ogawa",
+      "Julian Abrams",
+      "Ivan Raimondi",
+      "Dan A Landau",
+    ],
+    featureImage: "/pta.png",
+    journal: "bioRxiv",
+    doi: "doi.org/10.1101/2025.10.11.681805",
+    abstract:
+      "The human somatic genome evolves throughout our lifespan, producing mosaic individuals comprising clones harboring different mutations across tissues. While clonal expansions in the hematopoietic system have been extensively characterized and reported to be nearly ubiquitous, clonal mosaicism (CM) has more recently also been described across multiple solid tissues. However, outstanding questions remain about the parameters and processes of human somatic evolution in non-cancerous solid human tissues, including when clones arise, how they evolve over time, and what mechanisms lead to their expansion. Questions of timing and clonal dynamics can be addressed through phylogenetic reconstruction, which serves as a ′temporal microscope′, while uncovering the mechanisms of expansion necessitates simultaneous phenotypic profiling. To address this gap, here we develop Single-cell Miniaturized Automated Reverse Transcription and Primary Template-directed Amplification (SMART-PTA) for joint single-cell whole-genome and whole-transcriptome sequencing for large scale and cost-efficient interrogation of solid tissue CM. We established a workflow that generates hundreds of matched single-cell whole genome and transcriptome libraries within a week. We profiled phenotypically normal esophagus tissue from four aged donors′ and used somatic variants to build high-resolution single-cell lineages from >2,700 cells with accompanying transcriptomic information, reconstructing >70 years of somatic evolution. T cell expansions identified from T cell receptor (TCR) sequences validated the clonal structure of the single-nucleotide variant (SNV)-based phylogenies and phylogenetic cross-correlation analysis showed that epithelial cells had higher degrees of shared ancestry by spatial location compared to immune cells. Mapping mutation signatures to the phylogenetic tree revealed the emergence of tobacco/alcohol exposure-related signatures later in life, consistent with the donors′ exposure histories. We identified variants in driver genes that were previously reported in the phenotypically normal esophagus, detecting clonal expansions harboring mutations in genes including TP53 and FAT1. We mapped the evolution of clones with both monoallelic as well as biallelic TP53 loss, including a clone associated with high expression of cell cycling genes and higher chromosome instability. Leveraging the matched transcriptome data, we uncovered cell type biases in mutant clones, with a higher proportion of TP53 or FAT1-mutant cells in an earlier basal epithelial cell state compared to wild-type cells. We further observed copy-neutral loss of heterozygosity (CNLOH) events on chromosome 9q that spanned the NOTCH1 locus in up to ~35% of epithelial cells. Mapping CNLOH events to the phylogenetic tree revealed a striking pattern in which CNLOH was separately acquired many times, reflecting convergent evolution. Cells with CNLOH events were biased towards the earlier basal epithelial state, suggestive of a selective advantage that leads to prevalent recurrence of chr9q CNLOH. Together, we demonstrate that SMART-PTA is an efficient, scalable approach for single-cell whole-genome and whole-transcriptome profiling to build phenotypically annotated single-cell phylogenies with enough throughput and power for application to normal tissue somatic evolution. Moreover, we reconstruct the evolutionary history of the esophageal epithelium at high scale and resolution, providing a window into the dynamics and processes that shape clonal expansions in phenotypically normal tissues throughout a lifespan.",
+  },
+  {
+    title: "Single-cell mapping of regulatory DNA:Protein interactions",
+    authors: [
+      "Wei-Yu Chi",
+      "Sang-Ho Yoon",
+      "Evrim Goksel",
+      "Levan Mekerishvili",
+      "Joe Pelt",
+      "Yiyun Lin",
+      "Tamara Prieto",
+      "John Zinno",
+      "Saravanan Ganesan",
+      "Catherine Potenski",
+      "Franco Izzo",
+      "Dan A. Landau",
+      "Ivan Raimondi",
+    ],
+    featureImage: "/dnd.png",
+    journal: "bioRxiv",
+    doi: "doi.org/10.1101/2024.12.31.630903",
+    abstract:
+      "Gene expression is coordinated by a multitude of transcription factors (TFs), whose binding to the genome is directed through multiple interconnected epigenetic signals, including chromatin accessibility and histone modifications. These complex networks have been shown to be disrupted during aging, disease, and cancer. However, profiling these networks across diverse cell types and states has been limited due to the technical constraints of existing methods for mapping DNA:Protein interactions in single cells. As a result, a critical gap remains in understanding where TFs or other chromatin remodelers bind to DNA and how these interactions are perturbed in pathological contexts. To address this challenge, we developed a transformative single-cell immuno-tethering DNA:Protein mapping technology. By coupling a species-specific antibody-binding nanobody to a cytosine base editing enzyme, this approach enables profiling of even weak or transient factor binding to DNA, a task that was previously unachievable in single cells. Thus, our Docking & Deamination followed by sequencing (D&D-seq) technique induces cytosine-to-uracil edits in genomic regions bound by the target protein, offering a novel means to capture DNA:Protein interactions with unprecedented resolution. Importantly, this technique can be seamlessly incorporated into common single-cell multiomics workflows, enabling multimodal analysis of gene regulation in single cells. We tested the ability of D&D-seq to record TF binding both in bulk and at the single-cell level by profiling CTCF and GATA family members, obtaining high specificity and efficiency, with clear identification of TF footprint and signal retention in the targeted cell subpopulations. Furthermore, the deamination reaction showed minimal off-target activity, with high concordance to bulk ChIP-seq reference data. Applied to primary human peripheral blood mononuclear cells (PBMCs), D&D-seq successfully identified CTCF binding sites and enabled integration with advanced machine-learning algorithms for predicting 3D chromatin structure. Furthermore, we integrated D&D-seq with single-cell genotyping to assess the impact of IDH2 mutations on CTCF binding in a human clonal hematopoiesis sample, uncovering altered binding and chromatin co-accessibility patterns in mutant cells. Altogether, D&D-seq represents an important technological advance enabling the direct mapping of TF or chromatin remodeler binding to the DNA in primary human samples, opening new avenues for understanding chromatin and transcriptional regulation in health and disease.",
+  },
+  {
+    title:
+      "Measuring Longitudinal Genome-wide Clonal Evolution of Pediatric Acute Lymphoblastic Leukemia at Single-Cell Resolution",
+    journal: "bioRxiv",
+    authors: [
+      "Yakun Pang",
+      "Tamara Prieto",
+      "Veronica Gonzalez-Pena",
+      "Athena Aragon",
+      "Yuntao Xia",
+      "Sheng Kao",
+      "Sri Rajagopalan",
+      "John Zinno",
+      "Jean Quentin",
+      "Julien Laval",
+      "Dennis Yuan",
+      "Nathaniel Omans",
+      "David Klein",
+      "Matthew MacKay",
+      "Iwijn De Vlaminck",
+      "John Easton",
+      "William Evans",
+      "Dan A. Landau",
+      "Charles Gawad",
+    ],
+    doi: "doi.org/10.1101/2025.03.19.644196",
+    featureImage: "/ball_abc2.png",
+    abstract:
+      "Over 80% of children with acute lymphoblastic leukemia (pALL) can be cured by treating them with multiple chemotherapeutic agents administered over several years, whereas pALL is incurable with 1-3 medications, suggesting significant variation in drug susceptibility across clonal populations. While bulk sequencing studies indicate that pALL cells contain relatively few genetic variants compared to other cancers, the true extent of genetic diversity at the single-cell level remains unknown. Here, we used three complementary approaches to investigate pALL genetic heterogeneity: error-corrected bulk sequencing, single-cell exome sequencing, and primary template-directed amplification (PTA)-enabled single-cell genome sequencing. We discovered that some ETV6-RUNX1 samples harbor multiple independent ras clones and that individual pALL cells harbor substantially more mutations (mean 3,553 per cell) than detected in bulk samples (mean 965 mutations), with variant signatures suggesting both early and late APOBEC-driven mutagenesis in ETV6-RUNX1 patients. Using PTA-based phylogenetic analysis of over 150 single-cell genomes from four pALL patients, we identified heritable phenotypes associated with specific genetic alterations, including some low-frequency clones that are preferentially selected for during chemotherapy treatment. Our findings reveal previously undetected genetic diversity in pALL and suggest that pre-existing mutations influence treatment response, with implications for future therapeutic strategies. This study provides a high-resolution framework for understanding cancer clonal evolution during treatment, yielding important new insights for developing more effective therapeutic approaches for pALL.",
+  },
+  {
+    title:
+      "Genotype-to-phenotype mapping of somatic clonal mosaicism via single-cell co-capture of DNA mutations and mRNA transcripts",
+    journal: "bioRxiv",
+    authors: [
+      "Dennis J Yuan",
+      "John Zinno",
+      "Theo Botella",
+      "Dalia Dhingra",
+      "Shu Wang",
+      "Allegra Hawkins",
+      "Ariel Swett",
+      "Jesus Sotelo",
+      "Ramya Raviram",
+      "Clayton Hughes",
+      "Catherine Potenski",
+      "Akira Yokoyama",
+      "Nobuyuki Kakiuchi",
+      "Seishi Ogawa",
+      "Dan A Landau",
+    ],
+    doi: "doi.org/10.1101/2024.05.22.595241",
+    featureImage: "/scG2P.png",
+    abstract:
+      "Somatic mosaicism is a hallmark of malignancy that is also pervasively observed in human physiological aging, with clonal expansions of cells harboring mutations in recurrently mutated driver genes. Bulk sequencing of tissue microdissection captures mutation frequencies, but cannot distinguish which mutations co-occur in the same clones to reconstruct clonal architectures, nor phenotypically profile clonal populations to delineate how driver mutations impact cellular behavior. To address these challenges, we developed single-cell Genotype-to-Phenotype sequencing (scG2P) for high-throughput, highly-multiplexed, single-cell joint capture of recurrently mutated genomic regions and mRNA phenotypic markers in cells or nuclei isolated from solid tissues. We applied scG2P to aged esophagus samples from five individuals with high alcohol and tobacco exposure and observed a clonal landscape dominated by a large number of clones with a single driver event, but only rare clones with two driver mutations. NOTCH1 mutants dominate the clonal landscape and are linked to stunted epithelial differentiation, while TP53 mutants and double-driver mutants promote clonal expansion through both differentiation biases and increased cell cycling. Thus, joint single-cell highly multiplexed capture of somatic mutations and mRNA transcripts enables high resolution reconstruction of clonal architecture and associated phenotypes in solid tissue somatic mosaicism.",
+  },
+  {
+    title:
+      "Omicron Spike protein has a positive electrostatic surface that promotes ACE2 recognition and antibody escape",
+    journal: "Frontiers in Virology",
+    authors: ["Hin Hark Gan", "John Zinno", "Fabio Piano", "Kristin C Gunsalus"],
+    doi: "doi.org/10.3389/fviro.2022.894531",
+    featureImage: "/omicron.png",
+    abstract:
+      "High transmissibility is a hallmark of the Omicron variant of SARS-CoV-2. Understanding the molecular determinants of Omicron’s transmissibility will impact development of intervention strategies. Here we map the electrostatic potential surface of the Spike protein to show that major SARS-CoV-2 variants have accumulated positive charges in solvent-exposed regions of the Spike protein, especially its ACE2-binding interface. Significantly, the Omicron Spike-ACE2 complex has complementary electrostatic surfaces. In contrast, interfaces between Omicron and neutralizing antibodies tend to have similar positively charged surfaces. Structural modeling demonstrates that the electrostatic property of Omicron’s Spike receptor binding domain (S RBD) plays a role in enhancing ACE2 recognition and destabilizing Spike-antibody complexes. Specifically, the Omicron S RBD has favorable electrostatic interaction energy with ACE2 that is 3-5 times greater than the Delta variant over a range of 20 Å, implying efficient recognition of host receptors. Computed binding affinities of six representative S RBD-antibody complexes show that Omicron can escape most antibodies targeting the ACE2-binding region of S RBD. Interestingly, a straightforward assessment of the electrostatic surfaces of 18 neutralizing antibodies correctly predicted the Omicron escape status of 80% of cases. Collectively, our structural analysis implies that Omicron S RBD interaction interfaces have been optimized to simultaneously promote access to human ACE2 receptors and evade antibodies. These findings suggest that electrostatic interactions are a major contributing factor for increased Omicron transmissibility relative to other variants.",
+  },
+  {
+    title:
+      "The Caenorhabditis elegans TDRD5/7-like protein, LOTR-1, interacts with the helicase ZNFX-1 to balance epigenetic signals in the germline",
+    journal: "PLoS Genetics",
+    authors: [
+      "Elisabeth A. Marnik",
+      " Miguel V. Almeida",
+      "P. Giselle Cipriani",
+      "George Chung",
+      "Edoardo Caspani",
+      "Emil Karaulanov",
+      "Falk Butter",
+      "Catherine S. Sharp",
+      "John Zinno",
+      "Hin Hark Gan",
+      "Fabio Piano",
+      "René F Ketting",
+      "Kristin C. Gunsalus",
+      "Dustin L. Updike",
+    ],
+    doi: "doi.org/10.1371/journal.pgen.1010245",
+    featureImage: "/lotr1.png",
+    abstract:
+      "LOTUS and Tudor domain containing proteins have critical roles in the germline. Proteins that contain these domains, such as Tejas/Tapas in Drosophila, help localize the Vasa helicase to the germ granules and facilitate piRNA-mediated transposon silencing. The homologous proteins in mammals, TDRD5 and TDRD7, are required during spermiogenesis. Until now, proteins containing both LOTUS and Tudor domains in Caenorhabditis elegans have remained elusive. Here we describe LOTR-1 (D1081.7), which derives its name from its LOTUS and Tudor domains. Interestingly, LOTR-1 docks next to P granules to colocalize with the broadly conserved Z-granule helicase, ZNFX-1. The Tudor domain of LOTR-1 is required for its Z-granule retention. Like znfx-1 mutants, lotr-1 mutants lose small RNAs from the 3’ ends of WAGO and mutator targets, reminiscent of the loss of piRNAs from the 3’ ends of piRNA precursor transcripts in mouse Tdrd5 mutants. Our work shows that LOTR-1 acts with ZNFX-1 to bring small RNA amplifying mechanisms towards the 3’ ends of its RNA templates.",
+  },
+  {
+    title:
+      "Novel LOTUS-domain proteins are organizational hubs that recruit C. elegans Vasa to germ granules",
+    journal: "eLife",
+    authors: [
+      "Patricia Giselle Cipriani",
+      "Olivia Bay",
+      "John Zinno",
+      "Michelle Gutwein",
+      "Hin Hark Gan",
+      "George Chung",
+      "Jia-Xuan Chen",
+      "Hala Fahs",
+      "Yu Guan",
+      "Thomas F Duchaine",
+      "Matthias Selbach",
+      "Fabio Piano",
+      "Kristin C Gunsalus",
+    ],
+    doi: "doi.org/10.7554/eLife.60833",
+    featureImage: "/mips.png",
+    abstract:
+      "We describe MIP-1 and MIP-2, novel paralogous C. elegans germ granule components that interact with the intrinsically disordered MEG-3 protein. These proteins promote P granule condensation, form granules independently of MEG-3 in the postembryonic germ line, and balance each other in regulating P granule growth and localization. MIP-1 and MIP-2 each contain two LOTUS domains and intrinsically disordered regions and form homo- and heterodimers. They bind and anchor the Vasa homolog GLH-1 within P granules and are jointly required for coalescence of MEG-3, GLH-1, and PGL proteins. Animals lacking MIP-1 and MIP-2 show temperature-sensitive embryonic lethality, sterility, and mortal germ lines. Germline phenotypes include defects in stem cell self-renewal, meiotic progression, and gamete differentiation. We propose that these proteins serve as scaffolds and organizing centers for ribonucleoprotein networks within P granules that help recruit and balance essential RNA processing machinery to regulate key developmental transitions in the germ line.",
+  },
+  // Add more publications as needed
+];
+
+const experiences = [
+  {
+    role: "(Sr.) Genomics Data Scientist / AI",
+    company: "New York Genome Center & Weill Cornell Medicine",
+    duration: "September 2022 - Senior January 2024 - Present",
+    responsibilities: [
+      "Deep learning models for single-cell multiomics data",
+      "Novel phylogenetic methods for single-cell multiomics data",
+      "Massive scale data processing pipelines for single-cell multiomics data",
+    ],
+  },
+  {
+    role: "Bioinformatics, Data Engineering",
+    company: "NYU Langone Health",
+    duration: "December 2021 - January 2023",
+    responsibilities: [
+      "High-volume genomic data processing pipelines (WGS/ATAC/RNA-seq)",
+      "Novel germline genetic markers for improved melanoma prognosis prediction",
+      "Integrating various data types to identify complex genetic signatures and markers for immunotherapy response",
+    ],
+  },
+  {
+    role: "Assistant Research Scientist",
+    company: "NYU Center for Genomics and Systems Biology",
+    duration: "January 2018 - September 2022",
+    responsibilities: [
+      "Bioinformaitcs and data analysis",
+      "CRISPR/Cas9 genome editing",
+      "Superresolution microscopy",
+    ],
+  },
+  // {
+  //   role: "Teaching Assistant",
+  //   company: "Stony Brook University",
+  //   duration: "July 2017 - December 2017 ",
+  //   responsibilities: [
+  //     "Held office hour in biochemistry",
+  //     "Prepared and graded exams and quizzes",
+  //     "Supervised laboratory experiments",
+  //   ],
+  // },
+  // {
+  //   role: "Teaching Assistant",
+  //   company: "Florida Southern College",
+  //   duration: "August 2014 - May 2016",
+  //   responsibilities: [
+  //     "Held office hour in organic chemistry and biochemistry",
+  //     "Prepared and graded exams and quizzes",
+  //     "Supervised laboratory experiments",
+  //   ],
+  // },
+  // Add more experiences as needed
+];
+
+const degrees = [
+  {
+    role: "M.S. Bioinformatics",
+    company: "New York University",
+    duration: "Aug 2020 - May 2022",
+    responsibilities: [],
+  },
+  {
+    role: "M.S. Biochemistry & Cell Biology",
+    company: "Stony Brook University",
+    duration: "Aug 2016 - Dec 2017",
+    responsibilities: [],
+  },
+  {
+    role: "B.S. Biology",
+    company: "Florida Southern College",
+    duration: "Aug 2012 - May 2016",
+    responsibilities: [],
+  },
+  {
+    role: "B.S. Chemistry",
+    company: "Florida Southern College",
+    duration: "Aug 2012 - May 2016",
+    responsibilities: [],
+  },
+  {
+    role: "Minor in Physics",
+    company: "Florida Southern College",
+    duration: "Aug 2012 - May 2016",
+    responsibilities: ["Concentration in Quantum and Statistical Mechanics"],
+  },
+  // Add more degrees as needed
+];
+
+const galleryItems = [
+  {
+    featureImage: "/oci-blog.jpg",
+    title:
+      "Accelerating Human Somatic Mosaicism Research with Single-Cell Genomics and GPU Computing",
+    about:
+      "In collaboration Oracle we have developed pipelines for constructing the world's largest human single-cell multiomic phylogenies as record speeds. This was made possible through the innovative use of single-cell whole genome and whole transcriptome sequencing (SMART PTA), which allows for the analysis of genetic material at an unprecedented single-cell resolution and scale. By leveraging Oracle's GPU computing resources, the project significantly accelerated the processing of massive datasets, enabling the rapid analysis of many thousands of single-cell genomes. This work not only enhances our understanding of human somatic evolution but also paves the way for future advancements in personalized medicine and genomic research.",
+    blog: "https://blogs.oracle.com/cloud-infrastructure/post/oci-ny-genome-center-singlecell-genome-collab",
+  },
+  {
+    featureImage: "/torus.gif",
+    title: "Spatial Moran Evolution on a Torus",
+    about:
+      "A fun visualization of spatial Moran evolution on a torus. The goal here was to build a simulation framework to perform approximate Bayesian computation on competing clones in the context of human esophageal tissue. This approximates their spatial distribution to an infinite surface via the torus topology given enough simulated cells. Later work has incorporated cell layers and dynamic lineage tracking to explore the spatial dynamics of clones gaining relative fitness perturbing mutations. Cells are pixels, color indicates globally normalized fitness on the viridis cmap.",
+    blog: "",
+  },
+  {
+    featureImage: "/TP53_diffmap.png",
+    title: "Phenotype - Genotype Linkage",
+    about: "",
+    blog: "",
+  },
+  {
+    featureImage: "/ball_abc2.png",
+    title: "Single cell  whole genome sequencing Approximate Bayesian Computation",
+    about:
+      "Here we look at single cell whole genome sequencing data on a pediatric B-ALL patient. Interestingly we observe two mutations in the same codon of JAK2. We use ABC to infer the joint posterior distribution of the age of onset and fitness of these B-ALL clones and find that the two mutations have similar characteristics, this finding is consistent with the phylogeny of the clones. It would be interesting to observe subclonal diversity where sibling clones have different fitness advantages. I'm sure we will see this in the future.",
+    blog: "",
+  },
+  {
+    featureImage: "/scABC-nn.png",
+    title: "Simulating a simulator of Wright-Fisher evolution",
+    about:
+      "This is a very fun evolution of optimizing Wright-Fisher evolution simulators. blog post soon™",
+    blog: "",
+  },
+  {
+    featureImage: "/omicron.png",
+    title: "Evolution of SARS-CoV-2",
+    about:
+      "High transmissibility is a hallmark of the Omicron variant of SARS-CoV-2. Understanding the molecular determinants of Omicron's transmissibility will impact development of intervention strategies. Here we map the electrostatic potential surface of the Spike protein to show that major SARS-CoV-2 variants have accumulated positive charges in solvent-exposed regions of the Spike protein, especially its ACE2-binding interface. Significantly, the Omicron Spike-ACE2 complex has complementary electrostatic surfaces. In contrast, interfaces between Omicron and neutralizing antibodies tend to have similar positively charged surfaces. Structural modeling demonstrates that the electrostatic property of Omicron's Spike receptor binding domain (S RBD) plays a role in enhancing ACE2 recognition and destabilizing Spike-antibody complexes. Specifically, the Omicron S RBD has favorable electrostatic interaction energy with ACE2 that is 3-5 times greater than the Delta variant over a range of 20 Å, implying efficient recognition of host receptors. Computed binding affinities of six representative S RBD-antibody complexes show that Omicron can escape most antibodies targeting the ACE2-binding region of S RBD. Interestingly, a straightforward assessment of the electrostatic surfaces of 18 neutralizing antibodies correctly predicted the Omicron escape status of 80% of cases. Collectively, our structural analysis implies that Omicron S RBD interaction interfaces have been optimized to simultaneously promote access to human ACE2 receptors and evade antibodies. These findings suggest that electrostatic interactions are a major contributing factor for increased Omicron transmissibility relative to other variants",
+    blog: "",
+  },
+];
+
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 ">
+    <div className="flex flex-col min-h-screen bg-gray-100 scroll-smooth">
       <Head>
         <title>John Zinno</title>
         <meta property="og:image" content="/angelslanding.png" />
       </Head>
-      <main className="flex pt-14 justify-center items-center h-auto bg-gray-100 w-full">
-        <div className="shadow-xl rounded-xl bg-gray-100 m-2">
-          <div className="flex py-8 justify-center items-center h-auto max-w-4xl bg-slate-900 rounded-xl drop-shadow-xl opacity-90">
-            <ParticleBackground />
-            <div className="">
-              <div className="flex justify-center items-top">
-                <Image
-                  src="/angelslanding.png"
-                  alt="Description of image"
-                  width={250}
-                  height={250}
-                  className="rounded-xl z-10 select-none"
-                />
+      <Sidebar />
+      <main className="flex flex-col items-center w-full">
+        <section
+          id="intro"
+          className="flex pt-14 justify-center items-center h-auto bg-gray-100 w-full px-4"
+        >
+          <div className="shadow-xl rounded-xl bg-gray-100 m-2">
+            <div className="flex py-8 justify-center items-center h-auto max-w-4xl bg-slate-900 rounded-xl drop-shadow-xl opacity-90">
+              <ParticleBackground />
+              <div>
+                <div className="flex justify-center items-top">
+                  <Image
+                    src="/angelslanding.png"
+                    alt="Description of image"
+                    width={250}
+                    height={250}
+                    className="rounded-xl z-10 select-none"
+                  />
+                </div>
+                <h1 className="text-4xl tracking-wide subpixel-antialiased text-slate-300 text-center select-none py-2 z-10">
+                  John Zinno
+                </h1>
+                <p className="text-lg subpixel-antialiased text-slate-300 text-center px-4 z-10">
+                  As a Genomics Data Scientist, I am very interested in the
+                  power of machine learning / deep learning and its
+                  applications in genomics and bioinformatics. My recent work
+                  particularly emphasizes using Bayesian and generative models
+                  to analyze single-cell multiomics data towards understanding
+                  somatic mosaicism and characterizing genotype-phenotype
+                  relationships.
+                </p>
               </div>
-              <h1 className="text-4xl tracking-wide subpixel-antialiased text-slate-300 text-center select-none py-2 z-10">
-                John Zinno
-              </h1>
-              <p className="text-lg subpixel-antialiased text-slate-300 text-center px-4 z-10">
-              As a Genomics Data Scientist, I am very interested in the power
-              of machine learning / deep learning and its applications in
-              genomics and bioinformatics. My recent work particularly
-              emphasizes using Bayesian and generative models to analyze
-              single-cell multiomics data towards understanding somatic
-              mosaicism and characterizing genotype-phenotype relationships.
-              </p>
             </div>
           </div>
-        </div>
+        </section>
+
+        <section
+          id="pubs"
+          className="flex flex-col justify-center items-center p-4 text-center w-full max-w-7xl"
+        >
+          <h1 className="text-2xl font-bold select-none pb-2 w-1/2 text-center mx-auto border-gray-300">
+            Publications
+          </h1>
+          <div className="grid grid-cols-1 mb-20 px-10 gap-4 w-full">
+            {publications.map((publication, index) => (
+              <PublicationCard key={index} publication={publication} />
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="experience"
+          className="flex flex-col justify-center items-center p-4 text-center pb-12 w-full"
+        >
+          <h1 className="text-2xl font-bold text-slate-800 mb-6 select-none">
+            Work Experience
+          </h1>
+          <AccordionList items={experiences} />
+        </section>
+
+        <section
+          id="education"
+          className="flex flex-col justify-center items-center p-4 text-center pb-16 w-full"
+        >
+          <h1 className="text-2xl font-bold text-slate-800 mb-6 select-none">
+            Education
+          </h1>
+          <AccordionList items={degrees} />
+        </section>
+
+        <section
+          id="gallery"
+          className="flex flex-col flex-1 w-full items-center bg-gray-100"
+        >
+          <h1 className="text-2xl font-bold select-none my-4 w-1/2 text-center mx-auto border-gray-300">
+            Gallery
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2  mb-20 lg:grid-cols-3 gap-4 p-4 w-full max-w-7xl">
+            {galleryItems.map((item, index) => (
+              <GalleryCard key={index} {...item} />
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="affiliations"
+          className="flex flex-col items-center h-full w-full pb-24 px-4"
+        >
+          <div className="w-full max-w-7xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 place-items-center">
+              {images.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  width={250}
+                  height={250}
+                  className="object-cover"
+                />
+              ))}
+            </div>
+            <div className="relative flex items-center py-5">
+              <div className="flex-grow border-t border-gray-400"></div>
+              <span className="flex-shrink mx-4 text-gray-400">
+                Previous Affiliations
+              </span>
+              <div className="flex-grow border-t border-gray-400"></div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 place-items-center">
+              {previousImages.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  width={250}
+                  height={250}
+                  className="object-cover"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
-      <Sidebar />
-      <div className="flex flex-col items-center h-full w-full mb-16">
-        <div className="w-full max-w-7xl px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 place-items-center">
-            {images.map((image, index) => (
-              <Image
-                key={index}
-                src={image.src}
-                alt={image.alt}
-                width={250}
-                height={250}
-                className="object-cover"
-              />
-            ))}
-          </div>
-          <div className="relative flex items-center py-5">
-            <div className="flex-grow border-t border-gray-400"></div>
-            <span className="flex-shrink mx-4 text-gray-400">Previous Affiliations</span>
-            <div className="flex-grow border-t border-gray-400"></div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 place-items-center">
-            {previousImages.map((image, index) => (
-              <Image
-                key={index}
-                src={image.src}
-                alt={image.alt}
-                width={250}
-                height={250}
-                className="object-cover"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="text-center fixed bottom-0 left-0 w-full">
+      <div className="text-center fixed bottom-0 left-0 w-full pointer-events-none">
         <WaveComponent startColor="#ff5e62" endColor="#ff9966" />
       </div>
       <Footer />
