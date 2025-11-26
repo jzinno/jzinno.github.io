@@ -14,7 +14,7 @@ import {
 interface LinkItem {
   href: string;
   text: string;
-  icon: JSX.Element;
+  icon: React.ReactElement;
   external?: boolean;
 }
 
