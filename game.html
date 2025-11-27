@@ -128,6 +128,20 @@
 
     <canvas id="gameCanvas" width="600" height="700"></canvas>
 
+    <div id="tutorial-modal" style="display:flex; position:fixed; inset:0; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; z-index:20;">
+        <div style="background:linear-gradient(145deg,#15181f,#101218); border:1px solid var(--border-strong); padding:18px; border-radius:12px; width:360px; box-shadow:0 0 24px rgba(0,0,0,0.55); color:var(--text);">
+            <div style="font-weight:bold; margin-bottom:10px; color:var(--accent); text-align:center;">Quick Primer</div>
+            <ul style="padding-left:18px; margin:0 0 12px 0; color:var(--muted); line-height:1.4; font-size:13px;">
+                <li>Drag jobs from the queue onto a single node; they cannot cross node boundaries.</li>
+                <li>Fill empty cores to keep occupancy high; larger jobs earn the same gold, so pack smart.</li>
+                <li>Stuck? Drop a job on the red trash box to discard it (+1s wait penalty).</li>
+                <li>Finish the round to collect bonus gold, then buy nodes in the shop (drag to attach).</li>
+                <li>Average wait time over 8s ends the run.</li>
+            </ul>
+            <button class="control-btn" onclick="closeTutorial()" style="width:100%;">Got it</button>
+        </div>
+    </div>
+
     <div id="gameover-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65); align-items:center; justify-content:center;">
         <div style="background:linear-gradient(145deg,#15181f,#101218); border:1px solid var(--border-strong); padding:18px; border-radius:12px; width:340px; box-shadow:0 0 24px rgba(0,0,0,0.55); color:var(--text); text-align:center;">
             <div style="font-weight:bold; margin-bottom:8px; color:var(--accent-2);">Game Over</div>
@@ -171,14 +185,14 @@
     const TRASH_WIDTH = 90;
     const TRASH_HEIGHT = 50;
     const TRASH_MARGIN = 20;
-    const NODE_COST = 10;              // gold required per core (area unit)
+    const NODE_COST = 12;              // gold required per core (area unit)
     const PREVIEW_BUFFER = 4;          // extra cores beyond current grid to allow placement preview/attachment
     const GAME_OVER_WAIT = 8.0;        // seconds; if avg wait exceeds, trigger game over
     let seed = Math.floor(Math.random() * 1e9);
     let displaySeed = seed.toString();
 
     // Difficulty scaling per round
-    const BASE_JOBS_PER_ROUND = 10;
+    const BASE_JOBS_PER_ROUND = 16;
     const JOBS_PER_ROUND_INCREMENT = 4; // jobs added each round
     const BASE_SPAWN_RATE = 120;        // frames between spawns, round 1
     const SPAWN_RATE_ACCELERATION = 5; // frames removed each round
@@ -211,6 +225,7 @@
     const shopModal = document.getElementById('shop-modal');
     const shopItemsEl = document.getElementById('shop-items');
     const closeShopBtn = document.getElementById('close-shop');
+    const tutorialModal = document.getElementById('tutorial-modal');
 
     let shopItems = [];
     let draggingShopItem = null;
@@ -283,25 +298,37 @@ seedInput.value = displaySeed;
     }
 
     function recomputeLayout() {
-        const topBar = document.getElementById('top-bar');
-        const topH = topBar ? topBar.offsetHeight : 0;
-        const reservedVertical = GRID_TOP + QUEUE_MARGIN + QUEUE_HEIGHT + BOTTOM_PADDING + topH + 40; // queue space + padding
         const availableWidth = window.innerWidth - 120;
-        const availableHeight = window.innerHeight - reservedVertical;
+        const canvasTop = canvas.getBoundingClientRect().top || 0;
+        const reservedBelowGrid = GRID_TOP + QUEUE_MARGIN + QUEUE_HEIGHT + BOTTOM_PADDING;
+        const availableHeightForGrid = Math.max(60, window.innerHeight - canvasTop - reservedBelowGrid - 10);
 
         if (GRID_COLS === 0 || GRID_ROWS === 0) {
             NODE_SIZE = BASE_NODE_SIZE;
         } else {
             const fitWidth = Math.floor(availableWidth / GRID_COLS);
-            const fitHeight = Math.floor(availableHeight / GRID_ROWS);
-            NODE_SIZE = Math.max(10, Math.min(BASE_NODE_SIZE, fitWidth, fitHeight));
+            const fitHeight = Math.floor(availableHeightForGrid / GRID_ROWS);
+            NODE_SIZE = Math.max(6, Math.min(BASE_NODE_SIZE, fitWidth, fitHeight));
         }
 
-        const gridPixelWidth = GRID_COLS * NODE_SIZE;
-        const gridPixelHeight = GRID_ROWS * NODE_SIZE;
+        let gridPixelWidth = GRID_COLS * NODE_SIZE;
+        let gridPixelHeight = GRID_ROWS * NODE_SIZE;
 
-        CANVAS_WIDTH = Math.max(CANVAS_MIN_WIDTH, gridPixelWidth + 120);
-        CANVAS_HEIGHT = Math.max(CANVAS_MIN_HEIGHT, GRID_TOP + gridPixelHeight + QUEUE_MARGIN + QUEUE_HEIGHT + BOTTOM_PADDING);
+        const maxCanvasHeight = window.innerHeight - 10;
+        let desiredHeight = GRID_TOP + gridPixelHeight + QUEUE_MARGIN + QUEUE_HEIGHT + BOTTOM_PADDING;
+
+        // If still too tall, shrink nodes further to keep queue visible
+        if (desiredHeight > maxCanvasHeight && GRID_ROWS > 0) {
+            const roomForGrid = maxCanvasHeight - (GRID_TOP + QUEUE_MARGIN + QUEUE_HEIGHT + BOTTOM_PADDING);
+            const scale = roomForGrid > 0 ? (roomForGrid / gridPixelHeight) : 1;
+            NODE_SIZE = Math.max(6, Math.floor(NODE_SIZE * scale));
+            gridPixelWidth = GRID_COLS * NODE_SIZE;
+            gridPixelHeight = GRID_ROWS * NODE_SIZE;
+            desiredHeight = GRID_TOP + gridPixelHeight + QUEUE_MARGIN + QUEUE_HEIGHT + BOTTOM_PADDING;
+        }
+
+        CANVAS_WIDTH = Math.min(window.innerWidth - 20, Math.max(CANVAS_MIN_WIDTH, gridPixelWidth + 120));
+        CANVAS_HEIGHT = Math.min(maxCanvasHeight, Math.max(CANVAS_MIN_HEIGHT, desiredHeight));
         GRID_OFFSET_X = (CANVAS_WIDTH - gridPixelWidth) / 2;
         GRID_OFFSET_Y = GRID_TOP;
         QUEUE_Y = GRID_OFFSET_Y + gridPixelHeight + QUEUE_MARGIN;
@@ -326,12 +353,13 @@ seedInput.value = displaySeed;
     initNodes();
     document.getElementById('gold').innerText = gold;
     seedInput.value = seed.toString();
+    tutorialModal.style.display = 'flex';
 
     class Job {
         constructor(id) {
             this.id = id;
-            // Random Dimensions (scales up after round 2, but still includes smaller shapes)
-            const allowLarge = roundNumber >= 3;
+            // Random Dimensions (scales up after round 3, but still includes smaller shapes)
+            const allowLarge = roundNumber > 3;
             const rand = seededRand();
             const bigChance = allowLarge ? 0.1 : 0.0;
         const bigRoll = seededRand();
@@ -343,19 +371,19 @@ seedInput.value = displaySeed;
             else { this.w = 3; this.h = 3; }
         } else {
             const rand = seededRand();
-            if (rand < 0.5) {
+            if (rand < 0.45) {
                 this.w = 1; this.h = 1;
-            } else if (rand < 0.7) {
+            } else if (rand < 0.65) {
                 this.w = 2; this.h = 1;
-            } else if (rand < 0.9) {
+            } else if (rand < 0.85) {
                     this.w = 1; this.h = 2;
                 } else {
                     this.w = 2; this.h = 2;
                 }
             }
 
-            // Duration: 300 to 1200 frames (5 to 20 seconds approx)
-            this.maxDuration = 300 + seededRand() * 900;
+            // Duration: 500 to 1500 frames (8.3 to 25 seconds approx)
+            this.maxDuration = 500 + seededRand() * 1500;
             this.duration = this.maxDuration;
             
             // Visuals
@@ -557,7 +585,7 @@ seedInput.value = displaySeed;
         // Check End Condition
         if (jobsSpawned === jobsPerRound && jobs.length === 0 && activeJobs.length === 0) {
             isGameOver = true;
-            const bonus = (20 * roundNumber) + avgOcc; // occupancy is already percent-rounded
+            const bonus = (10 * roundNumber) + avgOcc; // occupancy is already percent-rounded
             gold += bonus;
             totalGoldEarned += bonus;
             document.getElementById('gold').innerText = gold;
@@ -1105,6 +1133,10 @@ seedInput.value = displaySeed;
         const info = document.getElementById('gameover-info');
         info.innerText = `Score: ${totalGoldEarned}\nOccupancy: ${avgOcc}% | Avg wait: ${avgWait}s\nRounds reached: ${roundNumber}\nSeed: ${runSeedDisplay}`;
         document.getElementById('gameover-modal').style.display = 'flex';
+    }
+
+    function closeTutorial() {
+        tutorialModal.style.display = 'none';
     }
 
     closeShopBtn.addEventListener('click', leaveShop);
