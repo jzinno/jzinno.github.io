@@ -6,7 +6,7 @@
 
 ```bash
 git clone https://github.com/jzinno/jzinno.github.io.git && cd jzinno.github.io.git
-npm install . && npm run dev
+bun install && bun run dev
 ```
 
 #### an iteration of my dotfiles

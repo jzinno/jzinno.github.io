@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "deploy": "next build && npx gh-pages -d out --branch=gh-pages",
+    "dev": "bunx next dev --turbopack",
+    "build": "bunx next build",
+    "start": "bunx next start",
+    "deploy": "bunx next build && bunx gh-pages -d out --branch=gh-pages",
     "predeploy": "rm -rf out",
-    "export": "next build"
+    "export": "bunx next build"
   },
   "keywords": [],
   "author": "",
