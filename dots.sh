@@ -58,5 +58,6 @@ echo "alias vi='nvim'" >> $HOME/.zshrc
 echo "alias bat='bat --paging=never'" >> $HOME/.zshrc
 echo "alias k='k -h'" >> $HOME/.zshrc
 echo "alias rm='rm -f'" >> $HOME/.zshrc
+git config --global alias.safe '!git config --global --add safe.directory "$(pwd)"'
 
 sed -i '1i command -v neofetch >/dev/null && neofetch' $HOME/.zshrc
