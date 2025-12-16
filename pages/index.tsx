@@ -388,7 +388,7 @@ const Home: React.FC = () => {
           id="pubs"
           className="flex flex-col justify-center items-center p-4 text-center w-full max-w-7xl"
         >
-          <h1 className="text-2xl font-bold select-none pb-2 w-1/2 text-center mx-auto border-gray-300">
+          <h1 className="text-2xl font-semibold text-slate-800 mb-6 select-none">
             Publications
           </h1>
           <div className="grid grid-cols-1 mb-20 px-10 gap-4 w-full">
@@ -402,7 +402,7 @@ const Home: React.FC = () => {
           id="experience"
           className="flex flex-col justify-center items-center p-4 text-center pb-12 w-full"
         >
-          <h1 className="text-2xl font-bold text-slate-800 mb-6 select-none">
+          <h1 className="text-2xl font-semibold text-slate-800 mb-6 select-none">
             Work Experience
           </h1>
           <AccordionList items={experiences} />
@@ -412,7 +412,7 @@ const Home: React.FC = () => {
           id="education"
           className="flex flex-col justify-center items-center p-4 text-center pb-16 w-full"
         >
-          <h1 className="text-2xl font-bold text-slate-800 mb-6 select-none">
+          <h1 className="text-2xl font-semibold text-slate-800 mb-6 select-none">
             Education
           </h1>
           <AccordionList items={degrees} />
@@ -422,7 +422,7 @@ const Home: React.FC = () => {
           id="gallery"
           className="flex flex-col flex-1 w-full items-center bg-gray-100"
         >
-          <h1 className="text-2xl font-bold select-none my-4 w-1/2 text-center mx-auto border-gray-300">
+          <h1 className="text-2xl font-semibold text-slate-800 mb-6 select-none">
             Gallery
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2  mb-20 lg:grid-cols-3 gap-4 p-4 w-full max-w-7xl">
