@@ -1,0 +1,1 @@
+var e=e=>(...t)=>{e(...t)},t={debug:e(console.debug),error:(e,...t)=>{console.error(`tsParticles - Error - ${e}`,...t)},info:e(console.info),log:e(console.log),trace:e(console.trace),verbose:e(console.log),warning:e(console.warn)};function n(){return t}export{n as t};
