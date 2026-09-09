@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import { FiX } from "react-icons/fi";
 
 interface GalleryCardProps {
@@ -34,13 +33,15 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
   return (
     <>
       <div
-        className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer select-none text-center hover:shadow-lg hover:scale-105 transition-all duration-200 ease-in-out"
+        className="max-sm:max-h-[80vh] bg-card rounded-lg shadow-md overflow-hidden cursor-pointer select-none text-center hover:shadow-lg hover:scale-105 transition-all duration-200 ease-in-out"
         onClick={handleCardClick}
       >
         <div className="relative h-64">
           <div className="mx-2 my-2 relative">
             <div className="relative h-64">
-              <Image
+              <img
+                loading="lazy"
+                decoding="async"
                 src={featureImage}
                 alt={title}
                 className="w-full h-full object-contain max-w-screen-lg"
@@ -51,7 +52,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
           </div>
         </div>
         <div className="p-4">
-          <h2 className="text-md text-slate-800 font-bold mb-2">{title}</h2>
+          <h2 className="text-md text-foreground font-bold mb-2">{title}</h2>
         </div>
       </div>
       {isModalOpen && (
@@ -59,12 +60,14 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
           className="fixed top-0 left-0 w-full h-full bg-gray-900/50 backdrop-filter backdrop-blur-sm flex justify-center items-center z-50"
           onClick={handleBackgroundClick}
         >
-          <div className="bg-white rounded-lg shadow-md overflow-hidden w-11/12 relative">
-            <div className="p-4 overflow-y-auto bg-white">
+          <div className="max-sm:max-h-[80vh] bg-card rounded-lg shadow-md overflow-hidden w-11/12 relative">
+            <div className="max-sm:max-h-[80vh] p-4 overflow-y-auto bg-card">
               <div className="flex flex-col md:flex-row md:items-center">
                 <div className="md:w-3/5 md:mr-4 mb-2">
                   <div className="m-2 rounded-lg overflow-hidden">
-                    <Image
+                    <img
+                      loading="lazy"
+                      decoding="async"
                       src={featureImage}
                       alt={title}
                       className="w-full h-full object-contain max-w-screen-lg"
@@ -76,7 +79,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
                 <div className="flex-1">
                   <div className="flex justify-end">
                     <button
-                      className="text-gray-700 text-xl absolute top-2 right-4"
+                      className="text-muted-foreground text-xl absolute top-2 right-4"
                       onClick={handleModalClose}
                     >
                       <FiX className="hover:scale-110 transition-all duration-200 ease-in-out" />
@@ -85,9 +88,9 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
                   <div className="text-center">
                     {title && <h2 className="text-m font-bold m-2">{title}</h2>}
                     <div className="max-h-[40vh] overflow-y-auto pb-0">
-                      <p className="text-gray-700 mb-10 ">{about}</p>
+                      <p className="text-muted-foreground mb-10 ">{about}</p>
                     </div>
-                    <p className="text-blue-500 mb-2">
+                    <p className="text-primary mb-2">
                       <a href={blog} target="_blank" rel="noopener noreferrer">
                         {blog}
                       </a>
@@ -99,13 +102,6 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
           </div>
         </div>
       )}
-      <style jsx>{`
-        @media (max-width: 640px) {
-          .bg-white {
-            max-height: 80vh;
-          }
-        }
-      `}</style>
     </>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 import { FiMenu, FiX, FiMail } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
@@ -34,7 +35,9 @@ const Sidebar: React.FC = () => {
     const element = document.getElementById(targetId);
 
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+      });
       return;
     }
 
@@ -54,38 +57,44 @@ const Sidebar: React.FC = () => {
   return (
     <>
       <button
-        className="fixed bg-gray-100/30 backdrop-blur-md top-0 left-0 m-3 text-4xl text-slate-900 opacity-70 rounded-md focus:outline-none hover:opacity-100 hover:scale-110 transition-all duration-200 ease-in-out"
+        aria-label="Open navigation"
+        aria-expanded={isOpen}
+        aria-controls="sidebar-navigation"
+        className="fixed bg-background/30 backdrop-blur-md top-0 left-0 m-3 text-4xl text-foreground opacity-70 rounded-md focus:outline-none hover:opacity-100 hover:scale-110 transition-all duration-200 ease-in-out"
         onClick={toggleSidebar}
       >
         <FiMenu />
       </button>
       <div
-        className={`fixed top-0 left-0 max-w-1/2 h-full bg-white/10 backdrop-blur-md shadow-2xl transition-all duration-300 transform z-10  ${
+        id="sidebar-navigation"
+        inert={!isOpen}
+        className={`fixed top-0 left-0 max-w-full h-full overflow-y-auto bg-card/10 dark:bg-sidebar/40 backdrop-blur-md shadow-2xl transition-all duration-300 transform z-40  ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex justify-center p-4">
           <div className="flex items-center mr-4">
             <a href="mailto:johnzinno14@gmail.com">
-              <FiMail className="text-gray-700 hover:text-gray-900 text-2xl hover:scale-110 transition-all duration-200 ease-in-out" />
+              <FiMail className="text-muted-foreground hover:text-foreground text-2xl hover:scale-110 transition-all duration-200 ease-in-out" />
             </a>
             <a
               href="https://github.com/jzinno"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub className="text-gray-700 hover:text-gray-900 text-2xl hover:scale-110 transition-all duration-200 ease-in-out ml-4" />
+              <FaGithub className="text-muted-foreground hover:text-foreground text-2xl hover:scale-110 transition-all duration-200 ease-in-out ml-4" />
             </a>
             <a
               href="https://www.linkedin.com/in/jzinno/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin className="text-gray-700 hover:text-gray-900 text-2xl hover:scale-110 transition-all duration-200 ease-in-out ml-4" />
+              <FaLinkedin className="text-muted-foreground hover:text-foreground text-2xl hover:scale-110 transition-all duration-200 ease-in-out ml-4" />
             </a>
           </div>
           <button
-            className="text-gray-700 rounded-md hover:text-gray-900 text-2xl hover:scale-110 transition-all duration-200 ease-in-out focus:outline-none"
+            aria-label="Close navigation"
+            className="text-muted-foreground rounded-md hover:text-foreground text-2xl hover:scale-110 transition-all duration-200 ease-in-out focus:outline-none"
             onClick={closeSidebar}
           >
             <FiX />
@@ -95,7 +104,7 @@ const Sidebar: React.FC = () => {
           {links.map((link) => (
             <li
               key={link.href}
-              className="px-6 py-2 hover:scale-105 cursor-pointer text-slate-900 select-none transition-all duration-200 ease-in-out flex items-center"
+              className="px-6 py-2 hover:scale-105 cursor-pointer text-foreground select-none transition-all duration-200 ease-in-out flex items-center"
             >
               {link.icon}
               {link.external ? (
@@ -103,7 +112,7 @@ const Sidebar: React.FC = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 ml-2 text-xl hover:text-gray-900 transition-all duration-200 ease-in-out"
+                  className="text-muted-foreground ml-2 text-xl hover:text-foreground transition-all duration-200 ease-in-out"
                   onClick={closeSidebar}
                 >
                   {link.text}
@@ -111,7 +120,7 @@ const Sidebar: React.FC = () => {
               ) : (
                 <a
                   href={link.href}
-                  className="text-gray-700 ml-2 text-xl hover:text-gray-900 transition-all duration-200 ease-in-out"
+                  className="text-muted-foreground ml-2 text-xl hover:text-foreground transition-all duration-200 ease-in-out"
                   onClick={(event) => {
                     event.preventDefault();
                     scrollToSection(link.href);
@@ -124,6 +133,7 @@ const Sidebar: React.FC = () => {
             </li>
           ))}
         </ul>
+        <ThemeToggle />
       </div>
     </>
   );

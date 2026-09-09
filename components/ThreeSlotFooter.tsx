@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="flex justify-between text-center fixed bottom-0 left-0 w-full p-4 pb-3">
+    <footer className="flex justify-between text-center fixed bottom-0 left-0 w-full p-4 pb-3 text-slate-950">
       <div className="item-center opacity-70 hover:shadow-2xl transition duration-200 ease-in-out transform hover:opacity-100 hover:-translate-y-1 hover:scale-110">
         <a
           href="mailto:johnzinno14@gmail.com"
