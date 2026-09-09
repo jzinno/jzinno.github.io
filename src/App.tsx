@@ -1,5 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
 import Footer from "../components/ThreeSlotFooter";
 import WaveComponent from "../components/WaveComponent";
 import ParticleBackground from "../components/ParticleBackground";
@@ -343,23 +341,23 @@ const galleryItems = [
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 scroll-smooth">
-      <Head>
-        <title>John Zinno</title>
-        <meta property="og:image" content="/angelslanding.png" />
-      </Head>
+    <div className="flex flex-col min-h-screen bg-background scroll-smooth">
+      <title>John Zinno</title>
+      <meta property="og:image" content="/angelslanding.png" />
       <Sidebar />
       <main className="flex flex-col items-center w-full">
         <section
           id="intro"
-          className="flex pt-14 justify-center items-center h-auto bg-gray-100 w-full px-4"
+          className="flex pt-14 justify-center items-center h-auto bg-background w-full px-4"
         >
-          <div className="shadow-xl rounded-xl bg-gray-100 m-2">
+          <div className="shadow-xl rounded-xl bg-background m-2">
             <div className="flex py-8 justify-center items-center h-auto max-w-4xl bg-slate-900 rounded-xl drop-shadow-xl opacity-90">
               <ParticleBackground />
               <div>
                 <div className="flex justify-center items-top">
-                  <Image
+                  <img
+                    decoding="async"
+                    fetchPriority="high"
                     src="/angelslanding.png"
                     alt="Description of image"
                     width={250}
@@ -388,7 +386,7 @@ const Home: React.FC = () => {
           id="pubs"
           className="flex flex-col justify-center items-center p-4 text-center w-full max-w-7xl"
         >
-          <h1 className="text-2xl font-semibold text-slate-800 mb-6 select-none">
+          <h1 className="text-2xl font-semibold text-foreground mb-6 select-none">
             Publications
           </h1>
           <div className="grid grid-cols-1 mb-20 px-10 gap-4 w-full">
@@ -402,7 +400,7 @@ const Home: React.FC = () => {
           id="experience"
           className="flex flex-col justify-center items-center p-4 text-center pb-12 w-full"
         >
-          <h1 className="text-2xl font-semibold text-slate-800 mb-6 select-none">
+          <h1 className="text-2xl font-semibold text-foreground mb-6 select-none">
             Work Experience
           </h1>
           <AccordionList items={experiences} />
@@ -412,7 +410,7 @@ const Home: React.FC = () => {
           id="education"
           className="flex flex-col justify-center items-center p-4 text-center pb-16 w-full"
         >
-          <h1 className="text-2xl font-semibold text-slate-800 mb-6 select-none">
+          <h1 className="text-2xl font-semibold text-foreground mb-6 select-none">
             Education
           </h1>
           <AccordionList items={degrees} />
@@ -420,9 +418,9 @@ const Home: React.FC = () => {
 
         <section
           id="gallery"
-          className="flex flex-col flex-1 w-full items-center bg-gray-100"
+          className="flex flex-col flex-1 w-full items-center bg-background"
         >
-          <h1 className="text-2xl font-semibold text-slate-800 mb-6 select-none">
+          <h1 className="text-2xl font-semibold text-foreground mb-6 select-none">
             Gallery
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2  mb-20 lg:grid-cols-3 gap-4 p-4 w-full max-w-7xl">
@@ -439,32 +437,36 @@ const Home: React.FC = () => {
           <div className="w-full max-w-7xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 place-items-center">
               {images.map((image, index) => (
-                <Image
+                <img
+                  loading="lazy"
+                  decoding="async"
                   key={index}
                   src={image.src}
                   alt={image.alt}
                   width={250}
                   height={250}
-                  className="object-cover"
+                  className="object-cover dark:bg-white dark:rounded-md"
                 />
               ))}
             </div>
             <div className="relative flex items-center py-5">
-              <div className="flex-grow border-t border-gray-400"></div>
-              <span className="flex-shrink mx-4 text-gray-400">
+              <div className="flex-grow border-t border-border"></div>
+              <span className="flex-shrink mx-4 text-muted-foreground">
                 Previous Affiliations
               </span>
-              <div className="flex-grow border-t border-gray-400"></div>
+              <div className="flex-grow border-t border-border"></div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 place-items-center">
               {previousImages.map((image, index) => (
-                <Image
+                <img
+                  loading="lazy"
+                  decoding="async"
                   key={index}
                   src={image.src}
                   alt={image.alt}
                   width={250}
                   height={250}
-                  className="object-cover"
+                  className="object-cover dark:bg-white dark:rounded-md"
                 />
               ))}
             </div>

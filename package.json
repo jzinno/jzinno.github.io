@@ -1,40 +1,45 @@
 {
   "name": "jzinno.github.io",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "John Zinno's portfolio",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.2",
+  "engines": {
+    "bun": ">=1.4.2"
+  },
   "scripts": {
-    "dev": "bunx next dev --turbopack",
-    "build": "bunx next build",
-    "start": "bunx next start",
-    "deploy": "bunx next build && bunx gh-pages -d out --branch=gh-pages",
-    "predeploy": "rm -rf out",
-    "export": "bunx next build"
+    "dev": "bun --bun vite",
+    "dev:tailnet": "bun scripts/dev-tailnet.ts",
+    "typecheck": "bun --bun tsc --noEmit",
+    "build": "bun run typecheck && bun --bun vite build && bun scripts/prerender.tsx",
+    "preview": "bun --bun vite preview",
+    "start": "bun run preview",
+    "deploy": "bun run build && bun --bun gh-pages -d dist --branch=gh-pages --dotfiles",
+    "export": "bun run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "homepage": "https://jzinno.github.io/",
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.17",
-    "@tsparticles/engine": "^3.9.1",
-    "@tsparticles/react": "^3.0.0",
-    "autoprefixer": "^10.4.22",
-    "next": "^16.0.3",
-    "postcss": "^8.5.6",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-icons": "^5.5.0",
-    "tailwindcss": "^4.1.17",
-    "tsparticles": "^3.9.1"
+    "@tanstack/react-router": "^1.170.33",
+    "@tsparticles/engine": "4.4.0",
+    "@tsparticles/react": "4.4.0",
+    "@tsparticles/slim": "4.4.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-icons": "^5.7.0"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
-    "@types/react": "19.2.6",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/bun": "^1.4.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
     "gh-pages": "^6.3.0",
-    "typescript": "^5.9.3"
-  },
-  "overrides": {
-    "@types/react": "19.2.6"
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2"
   }
 }

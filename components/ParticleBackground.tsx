@@ -1,34 +1,16 @@
-import { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles";
-import type { Container, Engine } from "@tsparticles/engine";
+import Particles, { ParticlesProvider } from "@tsparticles/react";
+import type { Engine } from "@tsparticles/engine";
+
+async function initParticles(engine: Engine) {
+  const { loadSlim } = await import("@tsparticles/slim");
+  await loadSlim(engine);
+}
 
 const ParticleBackground = () => {
-  const [init, setInit] = useState(false);
-
-  // this should be run only once per application lifetime
-  useEffect(() => {
-    initParticlesEngine(async (engine: Engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      await loadFull(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
-  const particlesLoaded = async (container?: Container) => {
-    console.log(container);
-  };
-
-  if (!init) {
-    return null;
-  }
-
   return (
+    <ParticlesProvider init={initParticles}>
     <Particles
       id="tsparticles"
-      particlesLoaded={particlesLoaded}
       style={{ zIndex: -10 }}
       options={{
         fpsLimit: 120,
@@ -57,8 +39,8 @@ const ParticleBackground = () => {
           },
         },
         particles: {
-          color: {
-            value: "#ff5e62",
+          paint: {
+            color: { value: "#ff5e62" },
           },
           links: {
             color: "#ff9966",
@@ -99,6 +81,7 @@ const ParticleBackground = () => {
         detectRetina: true,
       }}
     />
+    </ParticlesProvider>
   );
 };
 

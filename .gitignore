@@ -2,3 +2,5 @@
 node_modules
 stash
 out
+dist
+*.tsbuildinfo
