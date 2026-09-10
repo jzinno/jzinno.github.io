@@ -5,20 +5,16 @@ export default function ThemeToggle() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
     const sync = () => {
       let preference;
       try { preference = localStorage.getItem("theme"); } catch {}
-      const next = preference === "dark" ||
-        (preference !== "light" && systemTheme.matches);
+      const next = preference === "dark";
       document.documentElement.classList.toggle("dark", next);
       setDark(next);
     };
     sync();
-    systemTheme.addEventListener("change", sync);
     window.addEventListener("storage", sync);
     return () => {
-      systemTheme.removeEventListener("change", sync);
       window.removeEventListener("storage", sync);
     };
   }, []);

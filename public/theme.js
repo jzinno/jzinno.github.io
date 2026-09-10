@@ -2,7 +2,6 @@
 (() => {
   let preference;
   try { preference = localStorage.getItem("theme"); } catch {}
-  const dark = preference === "dark" ||
-    (preference !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+  const dark = preference === "dark";
   document.documentElement.classList.toggle("dark", dark);
 })();
